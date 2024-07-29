@@ -1,0 +1,2469 @@
+x y : ℝ≥0
+hx : 0 ≤ x
+hy : 0 ≤ y
+⊢ ↑sqrt x ≤ ↑sqrt (↑sqrt y) ↔ x ^ 2 ≤ y
+x y : ℝ≥0
+hx : 0 ≤ x
+hy : 0 ≤ y
+⊢ y = ↑sqrt x ↔ y * y = x
+x y : ℝ≥0
+hx : 0 ≤ x
+hy : 0 ≤ y
+⊢ ↑sqrt x = y ↔ y * y = x
+x y : ℝ≥0
+⊢ ↑sqrt x ≠ 0 ↔ 0 < x
+x y : ℝ≥0
+⊢ ↑sqrt x ≠ 0 ↔ ¬x ≤ 0
+x y : ℝ≥0
+hy : 0 ≤ y
+⊢ ↑sqrt (↑sqrt x) ≤ ↑sqrt (↑sqrt y) ↔ x ≤ y
+x y : ℝ≥0
+a : ℕ
+⊢ ↑(if a ≤ 1 then a else sqrt.iter a (a / 2)) ≤ Real.sqrt ↑a
+x y : ℝ≥0
+a : ℕ
+⊢ ↑(Nat.sqrt a) ≤ Real.sqrt ↑a
+x y : ℝ≥0
+a : ℕ
+⊢ (if a ≤ 1 then ↑a else ↑(sqrt.iter a (a / 2))) ≤ Real.sqrt ↑a
+x y : ℝ≥0
+⊢ x⁻¹ * ↑sqrt x = (↑sqrt x)⁻¹
+x y : ℝ≥0
+⊢ ↑sqrt x * x⁻¹ = (↑sqrt x)⁻¹
+x y : ℝ≥0
+⊢ ↑sqrt x / x = ↑sqrt x⁻¹
+x y : ℝ≥0
+⊢ x⁻¹ * ↑sqrt x = ↑sqrt x⁻¹
+x y : ℝ≥0
+⊢ ↑sqrt x * x⁻¹ = ↑sqrt x⁻¹
+x y : ℝ≥0
+⊢ ↑sqrt (↑sqrt (x * x)) * (↑sqrt (x * x))⁻¹ = ↑sqrt (↑sqrt (x * x))⁻¹
+x y : ℝ≥0
+⊢ ↑sqrt (↑sqrt (x * x)) * (↑sqrt (x * x))⁻¹ = (↑sqrt (↑sqrt (x * x)))⁻¹
+x y : ℝ≥0
+⊢ (↑sqrt (x * x))⁻¹ * ↑sqrt (↑sqrt (x * x)) = ↑sqrt (↑sqrt (x * x))⁻¹
+x y : ℝ≥0
+⊢ (↑sqrt x * ↑sqrt x)⁻¹ * ↑sqrt (↑sqrt x * ↑sqrt x) = ↑sqrt (↑sqrt x * ↑sqrt x)⁻¹
+x y : ℝ≥0
+hy : 0 ≤ y
+⊢ ↑sqrt x ≤ y ↔ x ≤ y * y
+x y : ℝ≥0
+hy : 0 ≤ y
+⊢ ↑sqrt (↑sqrt x) ≤ ↑sqrt y ↔ x ≤ y * y
+x y : ℝ≥0
+hy : 0 ≤ y
+⊢ x ≤ y ^ 2 ↔ x ≤ y * y
+x y : ℝ≥0
+hy : 0 ≤ y
+⊢ ↑(OrderIso.symm (powOrderIso 2 sqrt.proof_1)) x ≤ y ↔ x ≤ y * y
+x y : ℝ≥0
+hy : 0 ≤ y
+⊢ ↑(OrderIso.symm
+            (StrictMono.orderIsoOfSurjective (fun x => x ^ 2)
+              (_ : ∀ (x y : ℝ≥0), x < y → (fun x => x ^ 2) ((fun a => ↑a) x) < (fun x => x ^ 2) ↑y)
+              (_ : Surjective fun b => id b ^ 2)))
+        x ≤
+      y ↔
+    x ≤ y * y
+x y : ℝ≥0
+hy : 0 ≤ y
+⊢ x ≤ (↑sqrt y ^ 2) ^ 2 ↔ x ≤ y * y
+x y : ℝ≥0
+hy : 0 ≤ y
+⊢ ↑sqrt (↑sqrt (↑sqrt x)) ≤ ↑sqrt (↑sqrt y) ↔ x ≤ y * y
+x y : ℝ≥0
+hy : 0 ≤ y
+⊢ ↑sqrt x ≤ (↑sqrt (↑sqrt y) ^ 2) ^ 2 ↔ x ≤ y * y
+x y : ℝ≥0
+hy : 0 ≤ y
+⊢ ↑sqrt (↑sqrt (↑sqrt (↑sqrt x))) ≤ ↑sqrt (↑sqrt (↑sqrt y)) ↔ x ≤ y * y
+x y : ℝ≥0
+hy : 0 ≤ y
+⊢ ↑sqrt (↑sqrt x) ≤ ↑sqrt (↑sqrt y) ^ 2 ↔ x ≤ y * y
+x y : ℝ≥0
+hy : 0 ≤ y
+⊢ ↑sqrt (↑sqrt x) ≤ (↑sqrt (↑sqrt (↑sqrt y)) ^ 2) ^ 2 ↔ x ≤ y * y
+x y : ℝ≥0
+hy : 0 ≤ y
+⊢ ↑sqrt (↑sqrt (↑sqrt (↑sqrt (↑sqrt x)))) ≤ ↑sqrt (↑sqrt (↑sqrt (↑sqrt y))) ↔ x ≤ y * y
+x y : ℝ≥0
+hy : 0 ≤ y
+⊢ ↑sqrt (↑sqrt (↑sqrt x)) ≤ ↑sqrt (↑sqrt (↑sqrt y)) ^ 2 ↔ x ≤ y * y
+x y : ℝ≥0
+hy : 0 ≤ y
+⊢ ↑sqrt (↑sqrt (↑sqrt (↑sqrt (↑sqrt (↑sqrt x))))) ≤ ↑sqrt (↑sqrt (↑sqrt (↑sqrt (↑sqrt y)))) ↔ x ≤ y * y
+x y : ℝ≥0
+hy : 0 ≤ y
+⊢ ↑sqrt (↑sqrt (↑sqrt (↑sqrt x))) ≤ ↑sqrt (↑sqrt (↑sqrt (↑sqrt y))) ^ 2 ↔ x ≤ y * y
+x y : ℝ≥0
+hy : 0 ≤ y
+⊢ x ≤ (y * 1) ^ 2 ↔ x ≤ y * y
+x y : ℝ≥0
+h : x ≤ 0
+⊢ ↑(↑sqrt x) = ↑0
+x y : ℝ≥0
+h : x ≤ 0
+⊢ x = 0
+x y : ℝ≥0
+h : x ≤ 0
+⊢ 0 = x
+x y : ℝ≥0
+⊢ 0 < ↑sqrt (↑sqrt x) ↔ 0 < x
+x y : ℝ≥0
+⊢ 0 < ↑sqrt x ↔ 0 < x
+x y : ℝ≥0
+⊢ ↑sqrt 0 < ↑sqrt (↑sqrt (↑sqrt x)) ↔ 0 < x
+x y : ℝ≥0
+hx : 0 ≤ x
+h : x < y
+⊢ ↑sqrt (↑sqrt x) < ↑sqrt (↑sqrt y)
+x y : ℝ≥0
+hx : 0 ≤ x
+h : x < y
+⊢ ↑sqrt x < ↑sqrt y
+x y : ℝ≥0
+hx : 0 ≤ x
+h : x < y
+⊢ x < y
+x y : ℝ≥0
+h : 0 < y
+⊢ ↑sqrt x = y ↔ y * y = x
+x y : ℝ≥0
+a : ℕ
+⊢ Real.sqrt ↑a ≤ ↑(Nat.sqrt a) + ↑↑1
+x y : ℝ≥0
+a : ℕ
+⊢ Real.sqrt ↑a ≤ ↑(Nat.sqrt a + 1)
+x y : ℝ≥0
+a : ℕ
+⊢ Real.sqrt ↑a ≤ ↑(Nat.sqrt a) + ↑1
+x y : ℝ≥0
+a : ℕ
+⊢ Real.sqrt ↑a ≤ ↑(succ (Nat.sqrt a))
+x y : ℝ≥0
+a : ℕ
+⊢ ↑(↑sqrt (toNNReal ↑a)) ≤ ↑(Nat.sqrt a) + 1
+x y : ℝ≥0
+a : ℕ
+⊢ Real.sqrt ↑a ≤ ↑(Nat.sqrt a) + 1
+x y : ℝ≥0
+a : ℕ
+⊢ ↑(↑sqrt (toNNReal ↑a)) ≤ ↑(Nat.sqrt a + 1)
+x y : ℝ≥0
+a : ℕ
+⊢ ↑(↑sqrt (toNNReal ↑a)) ≤ ↑(Nat.sqrt a) + ↑↑1
+x y : ℝ≥0
+a : ℕ
+⊢ Real.sqrt ↑a ≤ ↑(Nat.sqrt a) + ↑↑↑↑1
+x y : ℝ≥0
+a : ℕ
+⊢ Real.sqrt ↑a ≤ ↑(Nat.sqrt a + ↑↑1)
+x y : ℝ≥0
+a : ℕ
+⊢ Real.sqrt ↑a ≤ ↑(Nat.sqrt a) + ↑↑↑1
+x y : ℝ≥0
+a : ℕ
+⊢ ↑(↑sqrt (toNNReal ↑a)) ≤ ↑(Nat.sqrt a) + ↑1
+x y : ℝ≥0
+a : ℕ
+⊢ ↑(↑sqrt ↑a) ≤ ↑(Nat.sqrt a) + 1
+x y : ℝ≥0
+a : ℕ
+⊢ Real.sqrt ↑(toNNReal ↑a) ≤ ↑(Nat.sqrt a) + 1
+x y : ℝ≥0
+a : ℕ
+⊢ ↑sqrt (toNNReal ↑a) ≤ ↑(Nat.sqrt a + 1)
+x y : ℝ≥0
+a : ℕ
+⊢ ↑(↑sqrt (toNNReal ↑a)) ≤ ↑(Nat.sqrt a + ↑↑1)
+x y : ℝ≥0
+a : ℕ
+⊢ ↑(↑sqrt (toNNReal ↑a)) ≤ ↑(Nat.sqrt a) + ↑↑↑↑1
+x y : ℝ≥0
+a : ℕ
+⊢ ↑(↑sqrt (toNNReal ↑a)) ≤ ↑(Nat.sqrt a) + ↑↑↑1
+x y : ℝ≥0
+a : ℕ
+⊢ Real.sqrt ↑(toNNReal ↑a) ≤ ↑(Nat.sqrt a) + ↑↑1
+x y : ℝ≥0
+a : ℕ
+⊢ Real.sqrt ↑(toNNReal ↑a) ≤ ↑(Nat.sqrt a + 1)
+x y : ℝ≥0
+a : ℕ
+⊢ ↑sqrt (toNNReal ↑a) ≤ ↑(Nat.sqrt a + ↑↑1)
+x y : ℝ≥0
+a : ℕ
+⊢ Real.sqrt ↑(toNNReal ↑a) ≤ ↑(Nat.sqrt a) + ↑1
+x y : ℝ≥0
+a : ℕ
+⊢ ↑(↑sqrt (toNNReal ↑a)) ≤ ↑(Nat.sqrt a + ↑1)
+x y : ℝ≥0
+a : ℕ
+⊢ 0 ≤ ↑(Nat.sqrt a) + 1 ∧ ↑(toNNReal ↑a) ≤ (↑(Nat.sqrt a) + 1) ^ 2
+x y : ℝ≥0
+a : ℕ
+⊢ Real.sqrt ↑↑a ≤ ↑(Nat.sqrt a) + 1
+x y : ℝ≥0
+a : ℕ
+⊢ ↑sqrt (toNNReal ↑a) ≤ toNNReal ↑(Nat.sqrt a + 1)
+x y : ℝ≥0
+a : ℕ
+⊢ Real.sqrt ↑(toNNReal ↑a) ≤ ↑(Nat.sqrt a) + ↑↑↑↑1
+x y : ℝ≥0
+a : ℕ
+⊢ Real.sqrt ↑(toNNReal ↑a) ≤ ↑(Nat.sqrt a + ↑↑1)
+x y : ℝ≥0
+a : ℕ
+⊢ Real.sqrt ↑(toNNReal ↑a) ≤ ↑(Nat.sqrt a) + ↑↑↑1
+x y : ℝ≥0
+a : ℕ
+⊢ Real.sqrt ↑(toNNReal ↑a) ≤ ↑(Nat.sqrt a + ↑1)
+x y : ℝ≥0
+a : ℕ
+⊢ ↑(↑sqrt ↑a) ≤ ↑(Nat.sqrt a) + ↑↑1
+x y : ℝ≥0
+a : ℕ
+⊢ Real.sqrt ↑a ≤ ↑(Nat.sqrt a + ↑1)
+x y : ℝ≥0
+a : ℕ
+⊢ ↑sqrt (toNNReal ↑a) ≤ ↑(Nat.sqrt a + ↑1)
+x y : ℝ≥0
+a : ℕ
+⊢ toNNReal ↑a ≤ ↑(Nat.sqrt a + 1) ^ 2
+x y : ℝ≥0
+a : ℕ
+⊢ ↑sqrt (toNNReal ↑a) ≤ ↑(Nat.sqrt a) + ↑1
+x y : ℝ≥0
+a : ℕ
+⊢ ↑sqrt (toNNReal ↑a) ≤ ↑(Nat.sqrt a) + 1
+x y : ℝ≥0
+a : ℕ
+⊢ ↑sqrt ↑a ≤ ↑(Nat.sqrt a) + 1
+x y : ℝ≥0
+a : ℕ
+⊢ ↑sqrt (toNNReal ↑a) ≤ ↑(Nat.sqrt a + ↑↑↑↑1)
+x y : ℝ≥0
+a : ℕ
+⊢ ↑sqrt (toNNReal ↑a) ≤ toNNReal ↑(Nat.sqrt a + ↑↑1)
+x y : ℝ≥0
+a : ℕ
+⊢ ↑sqrt (toNNReal ↑a) ≤ ↑(Nat.sqrt a + ↑↑↑1)
+x y : ℝ≥0
+a : ℕ
+⊢ toNNReal ↑a ≤ ↑((Nat.sqrt a + 1) ^ 2)
+x y : ℝ≥0
+a : ℕ
+⊢ ↑sqrt (toNNReal ↑a) ≤ ↑(Nat.sqrt a) + ↑↑↑1
+x y : ℝ≥0
+a : ℕ
+⊢ ↑sqrt (toNNReal ↑a) ≤ ↑(Nat.sqrt a) + ↑↑1
+x y : ℝ≥0
+a : ℕ
+⊢ toNNReal ↑a ≤ toNNReal ↑(Nat.sqrt a + 1) ^ 2
+x y : ℝ≥0
+a : ℕ
+⊢ ↑sqrt (toNNReal ↑a) ≤ toNNReal ↑(Nat.sqrt a) + 1
+x y : ℝ≥0
+a : ℕ
+⊢ ↑sqrt ↑a ≤ ↑(Nat.sqrt a) + ↑↑1
+x y : ℝ≥0
+a : ℕ
+⊢ ↑sqrt ↑a ≤ ↑(Nat.sqrt a + 1)
+x y : ℝ≥0
+a : ℕ
+⊢ ↑sqrt ↑a ≤ ↑(Nat.sqrt a) + ↑1
+x y : ℝ≥0
+a : ℕ
+⊢ Real.sqrt ↑↑a ≤ ↑(Nat.sqrt a) + ↑↑1
+x y : ℝ≥0
+a : ℕ
+⊢ Real.sqrt ↑↑a ≤ ↑(Nat.sqrt a + 1)
+x y : ℝ≥0
+a : ℕ
+⊢ Real.sqrt ↑↑a ≤ ↑(Nat.sqrt a) + ↑1
+x y : ℝ≥0
+a : ℕ
+⊢ Real.sqrt ↑↑a ≤ ↑(succ (Nat.sqrt a))
+x y : ℝ≥0
+a : ℕ
+⊢ 0 ≤ ↑(Nat.sqrt a) + ↑1 ∧ ↑(toNNReal ↑a) ≤ (↑(Nat.sqrt a) + ↑1) ^ 2
+x y : ℝ≥0
+a : ℕ
+⊢ ↑(↑sqrt (toNNReal ↑↑a)) ≤ ↑(Nat.sqrt a) + 1
+x y : ℝ≥0
+a : ℕ
+⊢ 0 ≤ ↑(Nat.sqrt a + 1) ∧ ↑(toNNReal ↑a) ≤ ↑(Nat.sqrt a + 1) ^ 2
+x y : ℝ≥0
+a : ℕ
+⊢ ↑sqrt ↑a ≤ toNNReal ↑(Nat.sqrt a + 1)
+x y : ℝ≥0
+a : ℕ
+⊢ ↑sqrt (toNNReal ↑a) ≤ toNNReal ↑(Nat.sqrt a + ↑1)
+x y : ℝ≥0
+a : ℕ
+⊢ ↑sqrt (toNNReal ↑a) ≤ toNNReal (↑(Nat.sqrt a) + 1)
+x y : ℝ≥0
+a : ℕ
+⊢ ↑sqrt (toNNReal ↑a) ≤ toNNReal ↑(Nat.sqrt a + ↑↑↑↑1)
+x y : ℝ≥0
+a : ℕ
+⊢ ↑sqrt ↑a ≤ toNNReal ↑(toNNReal ↑(Nat.sqrt a + 1))
+x y : ℝ≥0
+a : ℕ
+⊢ ↑sqrt (toNNReal ↑a) ≤ toNNReal ↑(Nat.sqrt a + ↑↑↑1)
+x y : ℝ≥0
+a : ℕ
+⊢ ↑(↑sqrt ↑a) ≤ ↑(Nat.sqrt a + 1)
+x y : ℝ≥0
+a : ℕ
+⊢ ↑(↑sqrt ↑a) ≤ ↑(Nat.sqrt a) + ↑1
+x y : ℝ≥0
+a : ℕ
+⊢ toNNReal ↑a ≤ toNNReal ↑(Nat.sqrt a + ↑↑1) ^ 2
+x y : ℝ≥0
+a : ℕ
+⊢ toNNReal ↑a ≤ (↑(Nat.sqrt a) + 1) ^ 2
+x y : ℝ≥0
+a : ℕ
+⊢ 0 ≤ ↑(Nat.sqrt a) + ↑↑1 ∧ ↑(toNNReal ↑a) ≤ (↑(Nat.sqrt a) + ↑↑1) ^ 2
+x y : ℝ≥0
+a : ℕ
+⊢ ↑sqrt (toNNReal ↑(toNNReal ↑a)) ≤ ↑(Nat.sqrt a + ↑1)
+
+x y : ℝ≥0
+a : ℕ
+⊢ 0 ≤ ↑a
+x y : ℝ≥0
+a : ℕ
+⊢ toNNReal ↑a ≤ ↑(Nat.sqrt a + ↑1) ^ 2
+x y : ℝ≥0
+a : ℕ
+⊢ ↑(OrderIso.symm (powOrderIso 2 sqrt.proof_1)) ↑a ≤ ↑(Nat.sqrt a) + 1
+x y : ℝ≥0
+hy : 0 < y
+⊢ ↑sqrt (↑sqrt x) < ↑sqrt y ↔ x < y ^ 2
+x y : ℝ≥0
+hy : 0 < y
+⊢ ↑sqrt (↑sqrt (↑sqrt x)) < ↑sqrt (↑sqrt y) ↔ x < y ^ 2
+x y : ℝ≥0
+hy : 0 < y
+⊢ ↑sqrt x < y ↔ x < y ^ 2
+x y : ℝ≥0
+hy : 0 < y
+⊢ ↑sqrt (↑sqrt (↑sqrt (↑sqrt x))) < ↑sqrt (↑sqrt (↑sqrt y)) ↔ x < y ^ 2
+x y : ℝ≥0
+hy : 0 < y
+⊢ ↑sqrt (↑sqrt (↑sqrt (↑sqrt (↑sqrt x)))) < ↑sqrt (↑sqrt (↑sqrt (↑sqrt y))) ↔ x < y ^ 2
+x y : ℝ≥0
+hy : 0 < y
+⊢ ↑sqrt (↑sqrt (↑sqrt (↑sqrt (↑sqrt (↑sqrt x))))) < ↑sqrt (↑sqrt (↑sqrt (↑sqrt (↑sqrt y)))) ↔ x < y ^ 2
+x y : ℝ≥0
+hy : 0 < y
+⊢ ↑sqrt (↑sqrt (↑sqrt (↑sqrt (↑sqrt (↑sqrt (↑sqrt x)))))) < ↑sqrt (↑sqrt (↑sqrt (↑sqrt (↑sqrt (↑sqrt y))))) ↔ x < y ^ 2
+x y : ℝ≥0
+hy : 0 < y
+⊢ ↑sqrt (↑sqrt (↑sqrt (↑sqrt (↑sqrt (↑sqrt (↑sqrt (↑sqrt x))))))) <
+      ↑sqrt (↑sqrt (↑sqrt (↑sqrt (↑sqrt (↑sqrt (↑sqrt y)))))) ↔
+    x < y ^ 2
+x y : ℝ≥0
+hy : 0 < y
+⊢ ↑sqrt (↑sqrt (↑sqrt (↑sqrt (↑sqrt (↑sqrt (↑sqrt (↑sqrt (↑sqrt x)))))))) <
+      ↑sqrt (↑sqrt (↑sqrt (↑sqrt (↑sqrt (↑sqrt (↑sqrt (↑sqrt y))))))) ↔
+    x < y ^ 2
+x y : ℝ≥0
+hy : 0 < y
+⊢ ↑sqrt (↑sqrt (↑sqrt (↑sqrt (↑sqrt (↑sqrt (↑sqrt (↑sqrt (↑sqrt (↑sqrt x))))))))) <
+      ↑sqrt (↑sqrt (↑sqrt (↑sqrt (↑sqrt (↑sqrt (↑sqrt (↑sqrt (↑sqrt y)))))))) ↔
+    x < y ^ 2
+x y : ℝ≥0
+hy : 0 < y
+⊢ ↑sqrt (↑sqrt (↑sqrt (↑sqrt (↑sqrt (↑sqrt (↑sqrt (↑sqrt (↑sqrt (↑sqrt (↑sqrt x)))))))))) <
+      ↑sqrt (↑sqrt (↑sqrt (↑sqrt (↑sqrt (↑sqrt (↑sqrt (↑sqrt (↑sqrt (↑sqrt y))))))))) ↔
+    x < y ^ 2
+x y : ℝ≥0
+hy : 0 < y
+⊢ ↑sqrt (↑sqrt (↑sqrt (↑sqrt (↑sqrt (↑sqrt (↑sqrt (↑sqrt (↑sqrt (↑sqrt (↑sqrt (↑sqrt x))))))))))) <
+      ↑sqrt (↑sqrt (↑sqrt (↑sqrt (↑sqrt (↑sqrt (↑sqrt (↑sqrt (↑sqrt (↑sqrt (↑sqrt y)))))))))) ↔
+    x < y ^ 2
+x y : ℝ≥0
+hy : 0 < y
+⊢ ↑sqrt (↑sqrt (↑sqrt (↑sqrt (↑sqrt (↑sqrt (↑sqrt (↑sqrt (↑sqrt (↑sqrt (↑sqrt (↑sqrt (↑sqrt x)))))))))))) <
+      ↑sqrt (↑sqrt (↑sqrt (↑sqrt (↑sqrt (↑sqrt (↑sqrt (↑sqrt (↑sqrt (↑sqrt (↑sqrt (↑sqrt y))))))))))) ↔
+    x < y ^ 2
+x y : ℝ≥0
+hy : 0 < y
+⊢ ↑sqrt (↑sqrt (↑sqrt (↑sqrt (↑sqrt (↑sqrt (↑sqrt (↑sqrt (↑sqrt (↑sqrt (↑sqrt (↑sqrt (↑sqrt (↑sqrt x))))))))))))) <
+      ↑sqrt (↑sqrt (↑sqrt (↑sqrt (↑sqrt (↑sqrt (↑sqrt (↑sqrt (↑sqrt (↑sqrt (↑sqrt (↑sqrt (↑sqrt y)))))))))))) ↔
+    x < y ^ 2
+x y : ℝ≥0
+hy : 0 < y
+⊢ ↑sqrt
+        (↑sqrt
+          (↑sqrt (↑sqrt (↑sqrt (↑sqrt (↑sqrt (↑sqrt (↑sqrt (↑sqrt (↑sqrt (↑sqrt (↑sqrt (↑sqrt (↑sqrt x)))))))))))))) <
+      ↑sqrt (↑sqrt (↑sqrt (↑sqrt (↑sqrt (↑sqrt (↑sqrt (↑sqrt (↑sqrt (↑sqrt (↑sqrt (↑sqrt (↑sqrt (↑sqrt y))))))))))))) ↔
+    x < y ^ 2
+x y : ℝ≥0
+hy : 0 < y
+⊢ ↑sqrt
+        (↑sqrt
+          (↑sqrt
+            (↑sqrt
+              (↑sqrt (↑sqrt (↑sqrt (↑sqrt (↑sqrt (↑sqrt (↑sqrt (↑sqrt (↑sqrt (↑sqrt (↑sqrt (↑sqrt x))))))))))))))) <
+      ↑sqrt
+        (↑sqrt
+          (↑sqrt (↑sqrt (↑sqrt (↑sqrt (↑sqrt (↑sqrt (↑sqrt (↑sqrt (↑sqrt (↑sqrt (↑sqrt (↑sqrt (↑sqrt y)))))))))))))) ↔
+    x < y ^ 2
+x y : ℝ≥0
+hy : 0 < y
+⊢ ↑sqrt
+        (↑sqrt
+          (↑sqrt
+            (↑sqrt
+              (↑sqrt
+                (↑sqrt (↑sqrt (↑sqrt (↑sqrt (↑sqrt (↑sqrt (↑sqrt (↑sqrt (↑sqrt (↑sqrt (↑sqrt (↑sqrt x)))))))))))))))) <
+      ↑sqrt
+        (↑sqrt
+          (↑sqrt
+            (↑sqrt
+              (↑sqrt (↑sqrt (↑sqrt (↑sqrt (↑sqrt (↑sqrt (↑sqrt (↑sqrt (↑sqrt (↑sqrt (↑sqrt (↑sqrt y))))))))))))))) ↔
+    x < y ^ 2
+x y : ℝ≥0
+hy : 0 < y
+⊢ ↑sqrt
+        (↑sqrt
+          (↑sqrt
+            (↑sqrt
+              (↑sqrt
+                (↑sqrt
+                  (↑sqrt
+                    (↑sqrt (↑sqrt (↑sqrt (↑sqrt (↑sqrt (↑sqrt (↑sqrt (↑sqrt (↑sqrt (↑sqrt (↑sqrt x))))))))))))))))) <
+      ↑sqrt
+        (↑sqrt
+          (↑sqrt
+            (↑sqrt
+              (↑sqrt
+                (↑sqrt (↑sqrt (↑sqrt (↑sqrt (↑sqrt (↑sqrt (↑sqrt (↑sqrt (↑sqrt (↑sqrt (↑sqrt (↑sqrt y)))))))))))))))) ↔
+    x < y ^ 2
+x y : ℝ≥0
+⊢ Continuous ↑(OrderIso.symm (powOrderIso 2 sqrt.proof_1))
+x y : ℝ≥0
+⊢ x * (↑sqrt x)⁻¹ = ↑sqrt x
+x y : ℝ≥0
+⊢ (↑sqrt x)⁻¹ * x = ↑sqrt x
+x y : ℝ≥0
+⊢ x = ↑sqrt x * ↑sqrt x
+
+x y : ℝ≥0
+⊢ ↑sqrt x ≠ 0
+x y : ℝ≥0
+⊢ ↑sqrt x ≠ 0
+x y : ℝ≥0
+⊢ ↑sqrt (x * x) = ↑sqrt (↑sqrt (x * x)) * ↑sqrt (↑sqrt (x * x))
+
+x y : ℝ≥0
+⊢ ↑sqrt x ≠ 0
+x y : ℝ≥0
+h : x ≤ y
+⊢ ↑sqrt (↑sqrt x) ≤ ↑sqrt (↑sqrt y)
+x y : ℝ≥0
+h : ↑x ≤ ↑y
+⊢ ↑sqrt x ≤ ↑sqrt y
+x y : ℝ≥0
+h : x ≤ y
+⊢ ↑(↑sqrt x) ≤ ↑(↑sqrt y)
+x y : ℝ≥0
+h : x ≤ y
+⊢ x ≤ y
+x y : ℝ≥0
+h : x ≤ y
+⊢ ↑(OrderIso.symm (powOrderIso 2 sqrt.proof_1)) x ≤ ↑(OrderIso.symm (powOrderIso 2 sqrt.proof_1)) y
+x y : ℝ≥0
+h : x ≤ y
+⊢ ↑sqrt x ≤ ↑sqrt y
+x y : ℝ≥0
+h : x ≤ y
+⊢ ↑sqrt (↑sqrt (↑sqrt x)) ≤ ↑sqrt (↑sqrt (↑sqrt y))
+x y : ℝ≥0
+h : ↑x ≤ ↑y
+⊢ ↑sqrt (↑sqrt x) ≤ ↑sqrt (↑sqrt y)
+x y : ℝ≥0
+hx : 0 ≤ x
+hy : 0 ≤ y
+⊢ ↑sqrt (↑sqrt x) < ↑sqrt y ↔ x < y ^ 2
+x y : ℝ≥0
+hx : 0 ≤ x
+hy : 0 ≤ y
+⊢ ↑sqrt x < y ↔ x < y * y
+x y : ℝ≥0
+hx : 0 ≤ x
+hy : 0 ≤ y
+⊢ ↑sqrt (↑sqrt x) < ↑sqrt y ↔ x < y * y
+x y : ℝ≥0
+hx : 0 ≤ x
+hy : 0 ≤ y
+⊢ ↑sqrt (↑sqrt (↑sqrt x)) < ↑sqrt (↑sqrt y) ↔ x < y ^ 2
+x y : ℝ≥0
+hx : 0 ≤ x
+hy : 0 ≤ y
+⊢ ↑sqrt x < y ↔ x < y ^ 2
+x y : ℝ≥0
+hx : 0 ≤ x
+hy : 0 ≤ y
+⊢ ↑sqrt (↑sqrt (↑sqrt (↑sqrt x))) < ↑sqrt (↑sqrt (↑sqrt y)) ↔ x < y ^ 2
+x y : ℝ≥0
+hx : 0 ≤ x
+hy : 0 ≤ y
+⊢ ↑sqrt (↑sqrt (↑sqrt (↑sqrt (↑sqrt x)))) < ↑sqrt (↑sqrt (↑sqrt (↑sqrt y))) ↔ x < y ^ 2
+x y : ℝ≥0
+hx : 0 ≤ x
+hy : 0 ≤ y
+⊢ ↑sqrt (↑sqrt (↑sqrt (↑sqrt (↑sqrt (↑sqrt x))))) < ↑sqrt (↑sqrt (↑sqrt (↑sqrt (↑sqrt y)))) ↔ x < y ^ 2
+x y : ℝ≥0
+hx : 0 ≤ x
+hy : 0 ≤ y
+⊢ ↑sqrt (↑sqrt (↑sqrt (↑sqrt (↑sqrt (↑sqrt (↑sqrt x)))))) < ↑sqrt (↑sqrt (↑sqrt (↑sqrt (↑sqrt (↑sqrt y))))) ↔ x < y ^ 2
+x y : ℝ≥0
+hx : 0 ≤ x
+hy : 0 ≤ y
+⊢ ↑sqrt (↑sqrt (↑sqrt (↑sqrt (↑sqrt (↑sqrt (↑sqrt (↑sqrt x))))))) <
+      ↑sqrt (↑sqrt (↑sqrt (↑sqrt (↑sqrt (↑sqrt (↑sqrt y)))))) ↔
+    x < y ^ 2
+x y : ℝ≥0
+hx : 0 ≤ x
+hy : 0 ≤ y
+⊢ ↑sqrt (↑sqrt (↑sqrt (↑sqrt (↑sqrt (↑sqrt (↑sqrt (↑sqrt (↑sqrt x)))))))) <
+      ↑sqrt (↑sqrt (↑sqrt (↑sqrt (↑sqrt (↑sqrt (↑sqrt (↑sqrt y))))))) ↔
+    x < y ^ 2
+x y : ℝ≥0
+hx : 0 ≤ x
+hy : 0 ≤ y
+⊢ ↑sqrt (↑sqrt (↑sqrt (↑sqrt (↑sqrt (↑sqrt (↑sqrt (↑sqrt (↑sqrt (↑sqrt x))))))))) <
+      ↑sqrt (↑sqrt (↑sqrt (↑sqrt (↑sqrt (↑sqrt (↑sqrt (↑sqrt (↑sqrt y)))))))) ↔
+    x < y ^ 2
+x y : ℝ≥0
+hx : 0 ≤ x
+hy : 0 ≤ y
+⊢ ↑sqrt (↑sqrt (↑sqrt x)) < ↑sqrt (↑sqrt y) ↔ x < y * y
+x y : ℝ≥0
+hx : 0 ≤ x
+hy : 0 ≤ y
+⊢ ↑sqrt (↑sqrt (↑sqrt (↑sqrt (↑sqrt (↑sqrt (↑sqrt (↑sqrt (↑sqrt (↑sqrt (↑sqrt x)))))))))) <
+      ↑sqrt (↑sqrt (↑sqrt (↑sqrt (↑sqrt (↑sqrt (↑sqrt (↑sqrt (↑sqrt (↑sqrt y))))))))) ↔
+    x < y ^ 2
+x y : ℝ≥0
+hx : 0 ≤ x
+hy : 0 ≤ y
+⊢ ↑sqrt (↑sqrt (↑sqrt (↑sqrt (↑sqrt (↑sqrt (↑sqrt (↑sqrt (↑sqrt (↑sqrt (↑sqrt (↑sqrt x))))))))))) <
+      ↑sqrt (↑sqrt (↑sqrt (↑sqrt (↑sqrt (↑sqrt (↑sqrt (↑sqrt (↑sqrt (↑sqrt (↑sqrt y)))))))))) ↔
+    x < y ^ 2
+x y : ℝ≥0
+hx : 0 ≤ x
+hy : 0 ≤ y
+⊢ ↑sqrt (↑sqrt (↑sqrt (↑sqrt (↑sqrt (↑sqrt (↑sqrt (↑sqrt (↑sqrt (↑sqrt (↑sqrt (↑sqrt (↑sqrt x)))))))))))) <
+      ↑sqrt (↑sqrt (↑sqrt (↑sqrt (↑sqrt (↑sqrt (↑sqrt (↑sqrt (↑sqrt (↑sqrt (↑sqrt (↑sqrt y))))))))))) ↔
+    x < y ^ 2
+x y : ℝ≥0
+hx : 0 ≤ x
+hy : 0 ≤ y
+⊢ ↑sqrt (↑sqrt (↑sqrt (↑sqrt (↑sqrt (↑sqrt (↑sqrt (↑sqrt (↑sqrt (↑sqrt (↑sqrt (↑sqrt (↑sqrt (↑sqrt x))))))))))))) <
+      ↑sqrt (↑sqrt (↑sqrt (↑sqrt (↑sqrt (↑sqrt (↑sqrt (↑sqrt (↑sqrt (↑sqrt (↑sqrt (↑sqrt (↑sqrt y)))))))))))) ↔
+    x < y ^ 2
+x y : ℝ≥0
+hx : 0 ≤ x
+hy : 0 ≤ y
+⊢ ↑sqrt
+        (↑sqrt
+          (↑sqrt (↑sqrt (↑sqrt (↑sqrt (↑sqrt (↑sqrt (↑sqrt (↑sqrt (↑sqrt (↑sqrt (↑sqrt (↑sqrt (↑sqrt x)))))))))))))) <
+      ↑sqrt (↑sqrt (↑sqrt (↑sqrt (↑sqrt (↑sqrt (↑sqrt (↑sqrt (↑sqrt (↑sqrt (↑sqrt (↑sqrt (↑sqrt (↑sqrt y))))))))))))) ↔
+    x < y ^ 2
+x y : ℝ≥0
+hx : 0 ≤ x
+hy : 0 ≤ y
+⊢ ↑sqrt
+        (↑sqrt
+          (↑sqrt
+            (↑sqrt
+              (↑sqrt (↑sqrt (↑sqrt (↑sqrt (↑sqrt (↑sqrt (↑sqrt (↑sqrt (↑sqrt (↑sqrt (↑sqrt (↑sqrt x))))))))))))))) <
+      ↑sqrt
+        (↑sqrt
+          (↑sqrt (↑sqrt (↑sqrt (↑sqrt (↑sqrt (↑sqrt (↑sqrt (↑sqrt (↑sqrt (↑sqrt (↑sqrt (↑sqrt (↑sqrt y)))))))))))))) ↔
+    x < y ^ 2
+x y : ℝ≥0
+⊢ ↑sqrt x * x⁻¹ = 1 / ↑sqrt x
+x y : ℝ≥0
+⊢ x⁻¹ * ↑sqrt x = 1 / ↑sqrt x
+x y : ℝ≥0
+⊢ ↑sqrt x * x⁻¹ = 1 * (↑sqrt x)⁻¹
+x y : ℝ≥0
+⊢ ↑sqrt x * x⁻¹ = (↑sqrt x)⁻¹
+x y : ℝ≥0
+⊢ ↑sqrt x = 1 / ↑sqrt x * x
+
+x y : ℝ≥0
+⊢ x ≠ 0
+x y : ℝ≥0
+⊢ ↑sqrt x / x = (↑sqrt x)⁻¹
+x y : ℝ≥0
+⊢ x⁻¹ * ↑sqrt x = (↑sqrt x)⁻¹
+x y : ℝ≥0
+⊢ ↑sqrt x / x = 1 / ↑sqrt x
+x y : ℝ≥0
+⊢ x⁻¹ * ↑sqrt x = (↑sqrt x)⁻¹ * 1
+x y : ℝ≥0
+⊢ x⁻¹ * ↑sqrt x = 1 * (↑sqrt x)⁻¹
+x y : ℝ≥0
+⊢ (↑sqrt (x * x))⁻¹ * ↑sqrt (↑sqrt (x * x)) = 1 / ↑sqrt (↑sqrt (x * x))
+x y : ℝ≥0
+⊢ ↑sqrt (↑sqrt (x * x)) * (↑sqrt (x * x))⁻¹ = 1 / ↑sqrt (↑sqrt (x * x))
+x y : ℝ≥0
+hx : 0 ≤ x
+⊢ ↑sqrt x < ↑sqrt (↑sqrt y) ↔ x ^ 2 < y
+x y : ℝ≥0
+hx : 0 ≤ x
+⊢ ↑sqrt (↑sqrt x) < ↑sqrt (↑sqrt (↑sqrt y)) ↔ x ^ 2 < y
+x y : ℝ≥0
+hx : 0 ≤ x
+⊢ x < ↑sqrt y ↔ x ^ 2 < y
+x y : ℝ≥0
+hx : 0 ≤ x
+⊢ ↑sqrt (↑sqrt (↑sqrt x)) < ↑sqrt (↑sqrt (↑sqrt (↑sqrt y))) ↔ x ^ 2 < y
+x y : ℝ≥0
+hx : 0 ≤ x
+⊢ ↑sqrt (↑sqrt (↑sqrt (↑sqrt x))) < ↑sqrt (↑sqrt (↑sqrt (↑sqrt (↑sqrt y)))) ↔ x ^ 2 < y
+x y : ℝ≥0
+hx : 0 ≤ x
+⊢ ↑sqrt (↑sqrt (↑sqrt (↑sqrt (↑sqrt x)))) < ↑sqrt (↑sqrt (↑sqrt (↑sqrt (↑sqrt (↑sqrt y))))) ↔ x ^ 2 < y
+x y : ℝ≥0
+hx : 0 ≤ x
+⊢ ↑sqrt (↑sqrt (↑sqrt (↑sqrt (↑sqrt (↑sqrt x))))) < ↑sqrt (↑sqrt (↑sqrt (↑sqrt (↑sqrt (↑sqrt (↑sqrt y)))))) ↔ x ^ 2 < y
+x y : ℝ≥0
+hx : 0 ≤ x
+⊢ ↑sqrt (↑sqrt (↑sqrt (↑sqrt (↑sqrt (↑sqrt (↑sqrt x)))))) <
+      ↑sqrt (↑sqrt (↑sqrt (↑sqrt (↑sqrt (↑sqrt (↑sqrt (↑sqrt y))))))) ↔
+    x ^ 2 < y
+x y : ℝ≥0
+hx : 0 ≤ x
+⊢ ↑sqrt (↑sqrt (↑sqrt (↑sqrt (↑sqrt (↑sqrt (↑sqrt (↑sqrt x))))))) <
+      ↑sqrt (↑sqrt (↑sqrt (↑sqrt (↑sqrt (↑sqrt (↑sqrt (↑sqrt (↑sqrt y)))))))) ↔
+    x ^ 2 < y
+x y : ℝ≥0
+hx : 0 ≤ x
+⊢ ↑sqrt (↑sqrt (↑sqrt (↑sqrt (↑sqrt (↑sqrt (↑sqrt (↑sqrt (↑sqrt x)))))))) <
+      ↑sqrt (↑sqrt (↑sqrt (↑sqrt (↑sqrt (↑sqrt (↑sqrt (↑sqrt (↑sqrt (↑sqrt y))))))))) ↔
+    x ^ 2 < y
+x y : ℝ≥0
+hx : 0 ≤ x
+⊢ ↑sqrt (↑sqrt (↑sqrt (↑sqrt (↑sqrt (↑sqrt (↑sqrt (↑sqrt (↑sqrt (↑sqrt x))))))))) <
+      ↑sqrt (↑sqrt (↑sqrt (↑sqrt (↑sqrt (↑sqrt (↑sqrt (↑sqrt (↑sqrt (↑sqrt (↑sqrt y)))))))))) ↔
+    x ^ 2 < y
+x y : ℝ≥0
+hx : 0 ≤ x
+hy : 0 ≤ y
+⊢ ↑sqrt x = y ↔ y * y = x
+x y : ℝ≥0
+hy : 0 < y
+⊢ ↑sqrt (↑sqrt x) < ↑sqrt (↑sqrt y) ↔ x < y
+x y : ℝ≥0
+h : x ^ 2 < y
+⊢ ↑sqrt x < ↑sqrt (↑sqrt y)
+x y : ℝ≥0
+h : x ^ 2 < y
+⊢ ↑x < ↑(↑sqrt y)
+x y : ℝ≥0
+h : ↑sqrt (x ^ 2) < ↑sqrt y
+⊢ x < ↑sqrt y
+x y : ℝ≥0
+h : ↑sqrt (x ^ 2) < ↑sqrt y
+⊢ ↑sqrt x < ↑sqrt (↑sqrt y)
+x y : ℝ≥0
+h : ↑(x ^ 2) < ↑y
+⊢ x < ↑sqrt y
+x y : ℝ≥0
+h : ↑sqrt (↑sqrt (x ^ 2)) < ↑sqrt (↑sqrt y)
+⊢ x < ↑sqrt y
+x y : ℝ≥0
+h : ↑(↑sqrt (x ^ 2)) < ↑(↑sqrt y)
+⊢ x < ↑sqrt y
+x y : ℝ≥0
+h : x ^ 2 < y
+⊢ x < ↑sqrt y
+x y : ℝ≥0
+h : x ^ 2 < y
+⊢ ↑sqrt (↑sqrt x) < ↑sqrt (↑sqrt (↑sqrt y))
+x y : ℝ≥0
+h : ↑(x ^ 2) < ↑y
+⊢ ↑x < ↑(↑sqrt y)
+x y : ℝ≥0
+h : ↑(x ^ 2) < ↑y
+⊢ ↑sqrt x < ↑sqrt (↑sqrt y)
+x y : ℝ≥0
+h : ↑sqrt (x ^ 2) < ↑sqrt y
+⊢ ↑x < ↑(↑sqrt y)
+x y : ℝ≥0
+h : ↑sqrt (↑sqrt (x ^ 2)) < ↑sqrt (↑sqrt y)
+⊢ ↑sqrt x < ↑sqrt (↑sqrt y)
+x y : ℝ≥0
+h : ↑sqrt (↑sqrt (x ^ 2)) < ↑sqrt (↑sqrt y)
+⊢ ↑sqrt (↑sqrt x) < ↑sqrt (↑sqrt (↑sqrt y))
+x y : ℝ≥0
+h : ↑sqrt (x ^ 2) < ↑sqrt y
+⊢ ↑sqrt (↑sqrt x) < ↑sqrt (↑sqrt (↑sqrt y))
+x y : ℝ≥0
+h : x ^ 2 ≤ y
+⊢ ↑sqrt x ≤ ↑sqrt (↑sqrt y)
+x y : ℝ≥0
+h : x ^ 2 ≤ y
+⊢ ↑x ≤ ↑(↑sqrt y)
+x y : ℝ≥0
+h : x ^ 2 ≤ y
+⊢ x ≤ ↑sqrt (↑sqrt (y ^ 2))
+x y : ℝ≥0
+h : ↑(x ^ 2) ≤ ↑y
+⊢ ↑x ≤ ↑(↑sqrt y)
+x y : ℝ≥0
+h : x ^ 2 ≤ y
+⊢ ↑x ≤ ↑(↑sqrt (↑sqrt (y ^ 2)))
+x y : ℝ≥0
+h : x ^ 2 ≤ y
+⊢ x ≤ ↑sqrt y
+x y : ℝ≥0
+h : x * x ≤ y
+⊢ x ≤ ↑sqrt (↑sqrt (y ^ 2))
+x y : ℝ≥0
+h : x ^ 2 ≤ y
+⊢ x ≤ ↑sqrt (↑sqrt (y * y))
+x y : ℝ≥0
+h : x * x ≤ y
+⊢ x ≤ ↑sqrt (↑sqrt (↑sqrt ((y ^ 2) ^ 2)))
+x y : ℝ≥0
+h : x * x ≤ y
+⊢ x ≤ ↑sqrt y
+x y : ℝ≥0
+h : x * x ≤ y
+⊢ x ≤ ↑sqrt (↑sqrt (y * y))
+x y : ℝ≥0
+h : x * x ≤ y
+⊢ ↑sqrt (x * x) ≤ ↑sqrt y
+x y : ℝ≥0
+h : x * x ≤ y
+⊢ ↑sqrt x ≤ ↑sqrt (↑sqrt y)
+x y : ℝ≥0
+h : x ^ 2 ≤ y
+⊢ x ≤ ↑sqrt (↑sqrt (↑sqrt ((y * y) ^ 2)))
+x y : ℝ≥0
+h : x ^ 2 ≤ y
+⊢ x ≤ ↑sqrt (↑sqrt y * ↑sqrt y)
+x y : ℝ≥0
+h : x * x ≤ y
+⊢ x ≤ ↑sqrt (↑sqrt y * ↑sqrt y)
+x y : ℝ≥0
+h : x * x ≤ y
+⊢ x ≤ ↑sqrt (↑sqrt (↑sqrt ((y * y) ^ 2)))
+x y : ℝ≥0
+h : x * x ≤ y
+⊢ x ≤ ↑sqrt (↑sqrt (↑sqrt (↑sqrt (((y * y) ^ 2) ^ 2))))
+x y : ℝ≥0
+h : x * x ≤ y
+⊢ ↑sqrt (↑sqrt (x * x) * ↑sqrt (x * x)) ≤ ↑sqrt y
+x y : ℝ≥0
+h : x * x ≤ y
+⊢ x ≤ ↑sqrt (↑sqrt (↑sqrt (↑sqrt ((y * y) ^ 2) ^ 2)))
+x y : ℝ≥0
+h : x * x ≤ y
+⊢ x ≤ ↑sqrt (↑sqrt (↑sqrt (y * y * (y * y))))
+x y : ℝ≥0
+h : x * x ≤ y
+⊢ ↑sqrt (↑sqrt x) ≤ ↑sqrt (↑sqrt (↑sqrt y))
+x y : ℝ≥0
+h : x * x ≤ y
+⊢ x ≤ ↑sqrt (↑sqrt y) ^ 2
+x y : ℝ≥0
+h : x * x ≤ y
+⊢ ↑sqrt x * ↑sqrt x ≤ ↑sqrt y
+x y : ℝ≥0
+h : x * x ≤ y
+⊢ ↑sqrt (↑sqrt (↑sqrt (x * x) * ↑sqrt (x * x))) * ↑sqrt (↑sqrt (↑sqrt (x * x) * ↑sqrt (x * x))) ≤ ↑sqrt y
+x y : ℝ≥0
+h : x * x ≤ y
+⊢ ↑sqrt (↑sqrt (↑sqrt (x ^ 2) ^ 2)) * ↑sqrt (↑sqrt (↑sqrt (x ^ 2) ^ 2)) ≤ ↑sqrt y
+x y : ℝ≥0
+h : x * x ≤ y
+⊢ ↑sqrt (↑sqrt (x * x)) * ↑sqrt (↑sqrt (x * x)) ≤ ↑sqrt y
+x y : ℝ≥0
+h : x * x ≤ y
+⊢ ↑sqrt (↑sqrt (x ^ 2)) * ↑sqrt (↑sqrt (x ^ 2)) ≤ ↑sqrt y
+x y : ℝ≥0
+h : x * x ≤ y
+⊢ ↑(OrderIso.symm (powOrderIso 2 sqrt.proof_1)) x * ↑(OrderIso.symm (powOrderIso 2 sqrt.proof_1)) x ≤
+    ↑(OrderIso.symm (powOrderIso 2 sqrt.proof_1)) y
+x y : ℝ≥0
+h : x * x ≤ y
+⊢ ↑sqrt (↑sqrt (↑sqrt (x * x))) * ↑sqrt (↑sqrt (↑sqrt (x * x))) *
+      (↑sqrt (↑sqrt (↑sqrt (x * x))) * ↑sqrt (↑sqrt (↑sqrt (x * x)))) ≤
+    ↑sqrt y
+x y : ℝ≥0
+h : x * x ≤ y
+⊢ ↑sqrt (↑sqrt (↑sqrt (↑sqrt ((x * x) ^ 2)) * ↑sqrt (↑sqrt ((x * x) ^ 2)))) *
+      ↑sqrt (↑sqrt (↑sqrt (↑sqrt ((x * x) ^ 2)) * ↑sqrt (↑sqrt ((x * x) ^ 2)))) ≤
+    ↑sqrt y
+x y : ℝ≥0
+h : x * x ≤ y
+⊢ ↑sqrt (↑sqrt (↑sqrt (x * x) * ↑sqrt (x * x)) * ↑sqrt (↑sqrt (x * x) * ↑sqrt (x * x))) ≤ ↑sqrt y
+x y : ℝ≥0
+h : x * x ≤ y
+⊢ ↑sqrt (↑sqrt (↑sqrt x * ↑sqrt x)) * ↑sqrt (↑sqrt (↑sqrt x * ↑sqrt x)) *
+      (↑sqrt (↑sqrt (↑sqrt x * ↑sqrt x)) * ↑sqrt (↑sqrt (↑sqrt x * ↑sqrt x))) ≤
+    ↑sqrt y
+x y : ℝ≥0
+h : x * x ≤ y
+⊢ ↑sqrt (↑sqrt (↑sqrt (x * x)) * ↑sqrt (↑sqrt (x * x))) * ↑sqrt (↑sqrt (↑sqrt (x * x)) * ↑sqrt (↑sqrt (x * x))) ≤
+    ↑sqrt y
+x y : ℝ≥0
+h : x * x ≤ y
+⊢ ↑sqrt (↑sqrt (↑sqrt ((x ^ 2) ^ 2))) * ↑sqrt (↑sqrt (↑sqrt ((x ^ 2) ^ 2))) ≤ ↑sqrt y
+x y : ℝ≥0
+h : x * x ≤ y
+⊢ ↑sqrt (↑sqrt x) * ↑sqrt (↑sqrt x) * (↑sqrt (↑sqrt x) * ↑sqrt (↑sqrt x)) ≤ ↑sqrt y
+x y : ℝ≥0
+h : x * x ≤ y
+⊢ ↑sqrt (x * x) * ↑sqrt (x * x) ≤ y
+x y : ℝ≥0
+h : x * x ≤ y
+⊢ ↑sqrt (↑sqrt x * ↑sqrt x) * ↑sqrt (↑sqrt x * ↑sqrt x) ≤ ↑sqrt y
+x y : ℝ≥0
+h : x * x ≤ y
+⊢ ↑sqrt (↑sqrt (↑sqrt ((x * x) ^ 2))) * ↑sqrt (↑sqrt (↑sqrt ((x * x) ^ 2))) ≤ ↑sqrt y
+x y : ℝ≥0
+h : x * x ≤ y
+⊢ ↑sqrt (↑sqrt (↑sqrt (x * x))) * ↑sqrt (↑sqrt (↑sqrt (x * x))) * ↑sqrt (↑sqrt (↑sqrt (x * x))) *
+      ↑sqrt (↑sqrt (↑sqrt (x * x))) ≤
+    ↑sqrt y
+x y : ℝ≥0
+h : x * x ≤ y
+⊢ ↑sqrt (↑sqrt (↑sqrt (x * x))) *
+      (↑sqrt (↑sqrt (↑sqrt (x * x))) * (↑sqrt (↑sqrt (↑sqrt (x * x))) * ↑sqrt (↑sqrt (↑sqrt (x * x))))) ≤
+    ↑sqrt y
+x y : ℝ≥0
+h : x * x ≤ y
+⊢ ↑sqrt (↑sqrt (↑sqrt x) * ↑sqrt (↑sqrt x)) * ↑sqrt (↑sqrt (↑sqrt x) * ↑sqrt (↑sqrt x)) *
+      (↑sqrt (↑sqrt (↑sqrt x) * ↑sqrt (↑sqrt x)) * ↑sqrt (↑sqrt (↑sqrt x) * ↑sqrt (↑sqrt x))) ≤
+    ↑sqrt y
+x y : ℝ≥0
+h : x * x ≤ y
+⊢ ↑sqrt (↑sqrt (↑sqrt (↑sqrt (↑sqrt ((x * x) ^ 2) ^ 2)) * ↑sqrt (↑sqrt (↑sqrt ((x * x) ^ 2) ^ 2)))) *
+      ↑sqrt (↑sqrt (↑sqrt (↑sqrt (↑sqrt ((x * x) ^ 2) ^ 2)) * ↑sqrt (↑sqrt (↑sqrt ((x * x) ^ 2) ^ 2)))) ≤
+    ↑sqrt y
+x y : ℝ≥0
+h : x * x ≤ y
+⊢ ↑sqrt (↑sqrt (↑sqrt x * ↑sqrt x)) * ↑sqrt (↑sqrt (↑sqrt x * ↑sqrt x)) * ↑sqrt (↑sqrt (↑sqrt x * ↑sqrt x)) *
+      ↑sqrt (↑sqrt (↑sqrt x * ↑sqrt x)) ≤
+    ↑sqrt y
+x y : ℝ≥0
+h : x * x ≤ y
+⊢ ↑sqrt (↑sqrt x) * ↑sqrt (↑sqrt x) * ↑sqrt (↑sqrt x) * ↑sqrt (↑sqrt x) ≤ ↑sqrt y
+x y : ℝ≥0
+h : x * x ≤ y
+⊢ ↑sqrt (↑sqrt (↑sqrt x * ↑sqrt x)) *
+      (↑sqrt (↑sqrt (↑sqrt x * ↑sqrt x)) * (↑sqrt (↑sqrt (↑sqrt x * ↑sqrt x)) * ↑sqrt (↑sqrt (↑sqrt x * ↑sqrt x)))) ≤
+    ↑sqrt y
+x y : ℝ≥0
+h : x * x ≤ y
+⊢ ↑sqrt (↑sqrt (↑sqrt x)) * ↑sqrt (↑sqrt (↑sqrt x)) * (↑sqrt (↑sqrt (↑sqrt x)) * ↑sqrt (↑sqrt (↑sqrt x))) *
+      (↑sqrt (↑sqrt (↑sqrt x)) * ↑sqrt (↑sqrt (↑sqrt x)) * (↑sqrt (↑sqrt (↑sqrt x)) * ↑sqrt (↑sqrt (↑sqrt x)))) ≤
+    ↑sqrt y
+x y : ℝ≥0
+h : x * x ≤ y
+⊢ ↑sqrt
+      (↑sqrt (↑sqrt (↑sqrt ((x * x) ^ 2)) * ↑sqrt (↑sqrt ((x * x) ^ 2))) *
+        ↑sqrt (↑sqrt (↑sqrt ((x * x) ^ 2)) * ↑sqrt (↑sqrt ((x * x) ^ 2)))) ≤
+    ↑sqrt y
+x y : ℝ≥0
+h : x * x ≤ y
+⊢ ↑sqrt (↑sqrt (↑sqrt x * ↑sqrt x) * ↑sqrt (↑sqrt x * ↑sqrt x)) *
+      ↑sqrt (↑sqrt (↑sqrt x * ↑sqrt x) * ↑sqrt (↑sqrt x * ↑sqrt x)) ≤
+    ↑sqrt y
+x y : ℝ≥0
+h : x * x ≤ y
+⊢ ↑sqrt (↑sqrt (↑sqrt (↑sqrt ((x * x) ^ 2)))) * ↑sqrt (↑sqrt (↑sqrt (↑sqrt ((x * x) ^ 2)))) *
+      (↑sqrt (↑sqrt (↑sqrt (↑sqrt ((x * x) ^ 2)))) * ↑sqrt (↑sqrt (↑sqrt (↑sqrt ((x * x) ^ 2))))) ≤
+    ↑sqrt y
+x y : ℝ≥0
+h : x * x ≤ y
+⊢ ↑sqrt (↑sqrt (x ^ 2) * ↑sqrt (x ^ 2)) ≤ ↑sqrt y
+x y : ℝ≥0
+h : x * x ≤ y
+⊢ ↑sqrt (↑sqrt (↑sqrt (↑sqrt ((x * x) ^ 2))) * ↑sqrt (↑sqrt (↑sqrt ((x * x) ^ 2)))) *
+      ↑sqrt (↑sqrt (↑sqrt (↑sqrt ((x * x) ^ 2))) * ↑sqrt (↑sqrt (↑sqrt ((x * x) ^ 2)))) ≤
+    ↑sqrt y
+x y : ℝ≥0
+h : x * x ≤ y
+⊢ ↑sqrt (↑sqrt (↑sqrt (x * x)) * ↑sqrt (↑sqrt (x * x)) * (↑sqrt (↑sqrt (x * x)) * ↑sqrt (↑sqrt (x * x)))) ≤ ↑sqrt y
+x y : ℝ≥0
+h : x * x ≤ y
+⊢ ↑sqrt (↑sqrt (↑sqrt (↑sqrt (x * x * (x * x))) * ↑sqrt (↑sqrt (x * x * (x * x))))) *
+      ↑sqrt (↑sqrt (↑sqrt (↑sqrt (x * x * (x * x))) * ↑sqrt (↑sqrt (x * x * (x * x))))) ≤
+    ↑sqrt y
+x y : ℝ≥0
+h : x * x ≤ y
+⊢ ↑sqrt (↑sqrt (↑sqrt (↑sqrt ((x * x) ^ 2)))) * ↑sqrt (↑sqrt (↑sqrt (↑sqrt ((x * x) ^ 2)))) *
+        ↑sqrt (↑sqrt (↑sqrt (↑sqrt ((x * x) ^ 2)))) *
+      ↑sqrt (↑sqrt (↑sqrt (↑sqrt ((x * x) ^ 2)))) ≤
+    ↑sqrt y
+x y : ℝ≥0
+h : x * x ≤ y
+⊢ ↑sqrt (↑sqrt (↑sqrt (↑sqrt ((x * x) ^ 2)))) *
+      (↑sqrt (↑sqrt (↑sqrt (↑sqrt ((x * x) ^ 2)))) *
+        (↑sqrt (↑sqrt (↑sqrt (↑sqrt ((x * x) ^ 2)))) * ↑sqrt (↑sqrt (↑sqrt (↑sqrt ((x * x) ^ 2)))))) ≤
+    ↑sqrt y
+x y : ℝ≥0
+h : x * x ≤ y
+⊢ ↑sqrt
+      (↑sqrt (↑sqrt (↑sqrt (↑sqrt ((x * x) ^ 2) ^ 2)) * ↑sqrt (↑sqrt (↑sqrt ((x * x) ^ 2) ^ 2))) *
+        ↑sqrt (↑sqrt (↑sqrt (↑sqrt ((x * x) ^ 2) ^ 2)) * ↑sqrt (↑sqrt (↑sqrt ((x * x) ^ 2) ^ 2)))) ≤
+    ↑sqrt y
+x y : ℝ≥0
+h : x * x ≤ y
+⊢ ↑sqrt
+      (↑sqrt (↑sqrt (↑sqrt ((x * x) ^ 2) * ↑sqrt ((x * x) ^ 2)) * ↑sqrt (↑sqrt ((x * x) ^ 2) * ↑sqrt ((x * x) ^ 2)))) ≤
+    ↑sqrt y
+x y : ℝ≥0
+h : x * x ≤ y
+⊢ ↑sqrt
+      (↑sqrt
+        (↑sqrt (↑sqrt ((x * x) ^ 2)) * ↑sqrt (↑sqrt ((x * x) ^ 2)) *
+          (↑sqrt (↑sqrt ((x * x) ^ 2)) * ↑sqrt (↑sqrt ((x * x) ^ 2))))) ≤
+    ↑sqrt y
+x y : ℝ≥0
+h : x * x ≤ y
+⊢ ↑sqrt (↑sqrt (↑sqrt (↑sqrt (x * x) * ↑sqrt (x * x)))) * ↑sqrt (↑sqrt (↑sqrt (↑sqrt (x * x) * ↑sqrt (x * x)))) *
+      (↑sqrt (↑sqrt (↑sqrt (↑sqrt (x * x) * ↑sqrt (x * x)))) * ↑sqrt (↑sqrt (↑sqrt (↑sqrt (x * x) * ↑sqrt (x * x))))) ≤
+    ↑sqrt y
+x y : ℝ≥0
+h : x * x ≤ y
+⊢ ↑sqrt (↑sqrt (↑sqrt (↑sqrt (x * x * (x * x))))) * ↑sqrt (↑sqrt (↑sqrt (↑sqrt (x * x * (x * x))))) *
+      (↑sqrt (↑sqrt (↑sqrt (↑sqrt (x * x * (x * x))))) * ↑sqrt (↑sqrt (↑sqrt (↑sqrt (x * x * (x * x)))))) ≤
+    ↑sqrt y
+x y : ℝ≥0
+h : x * x ≤ y
+⊢ ↑sqrt (↑sqrt (↑sqrt (↑sqrt (x * x * x * x)) * ↑sqrt (↑sqrt (x * x * x * x)))) *
+      ↑sqrt (↑sqrt (↑sqrt (↑sqrt (x * x * x * x)) * ↑sqrt (↑sqrt (x * x * x * x)))) ≤
+    ↑sqrt y
+x y : ℝ≥0
+h : x * x ≤ y
+⊢ ↑sqrt (↑sqrt (↑sqrt (↑sqrt (x * (x * (x * x)))) * ↑sqrt (↑sqrt (x * (x * (x * x)))))) *
+      ↑sqrt (↑sqrt (↑sqrt (↑sqrt (x * (x * (x * x)))) * ↑sqrt (↑sqrt (x * (x * (x * x)))))) ≤
+    ↑sqrt y
+x y : ℝ≥0
+h : x * x ≤ y
+⊢ ↑sqrt
+      (↑sqrt (↑sqrt (↑sqrt (x * x * (x * x))) * ↑sqrt (↑sqrt (x * x * (x * x)))) *
+        ↑sqrt (↑sqrt (↑sqrt (x * x * (x * x))) * ↑sqrt (↑sqrt (x * x * (x * x))))) ≤
+    ↑sqrt y
+x y : ℝ≥0
+h : x * x ≤ y
+⊢ ↑sqrt (↑sqrt (↑sqrt (x * x * (x * x)))) * ↑sqrt (↑sqrt (↑sqrt (x * x * (x * x)))) ≤ ↑sqrt y
+x y : ℝ≥0
+h : x * x ≤ y
+⊢ ↑sqrt (↑sqrt (↑sqrt (↑sqrt (x * x * (x * x)))) * ↑sqrt (↑sqrt (↑sqrt (x * x * (x * x))))) *
+      ↑sqrt (↑sqrt (↑sqrt (↑sqrt (x * x * (x * x)))) * ↑sqrt (↑sqrt (↑sqrt (x * x * (x * x))))) ≤
+    ↑sqrt y
+x y : ℝ≥0
+h : x * x ≤ y
+⊢ ↑sqrt (↑sqrt (↑sqrt (↑sqrt (↑sqrt ((x * x) ^ 2) ^ 2)))) * ↑sqrt (↑sqrt (↑sqrt (↑sqrt (↑sqrt ((x * x) ^ 2) ^ 2)))) *
+      (↑sqrt (↑sqrt (↑sqrt (↑sqrt (↑sqrt ((x * x) ^ 2) ^ 2)))) *
+        ↑sqrt (↑sqrt (↑sqrt (↑sqrt (↑sqrt ((x * x) ^ 2) ^ 2))))) ≤
+    ↑sqrt y
+x y : ℝ≥0
+h : x * x ≤ y
+⊢ ↑sqrt (↑sqrt (↑sqrt (↑sqrt (x * x * x) * ↑sqrt x))) * ↑sqrt (↑sqrt (↑sqrt (↑sqrt (x * x * x) * ↑sqrt x))) *
+      (↑sqrt (↑sqrt (↑sqrt (↑sqrt (x * x * x) * ↑sqrt x))) * ↑sqrt (↑sqrt (↑sqrt (↑sqrt (x * x * x) * ↑sqrt x)))) ≤
+    ↑sqrt y
+x y : ℝ≥0
+h : x * x ≤ y
+⊢ ↑sqrt (↑sqrt (↑sqrt (↑sqrt (x * x * x * x)))) * ↑sqrt (↑sqrt (↑sqrt (↑sqrt (x * x * x * x)))) *
+      (↑sqrt (↑sqrt (↑sqrt (↑sqrt (x * x * x * x)))) * ↑sqrt (↑sqrt (↑sqrt (↑sqrt (x * x * x * x))))) ≤
+    ↑sqrt y
+x y : ℝ≥0
+h : x * x ≤ y
+⊢ ↑sqrt (↑sqrt (↑sqrt (↑sqrt (x * x) * ↑sqrt (x * x)))) * ↑sqrt (↑sqrt (↑sqrt (↑sqrt (x * x) * ↑sqrt (x * x)))) *
+        ↑sqrt (↑sqrt (↑sqrt (↑sqrt (x * x) * ↑sqrt (x * x)))) *
+      ↑sqrt (↑sqrt (↑sqrt (↑sqrt (x * x) * ↑sqrt (x * x)))) ≤
+    ↑sqrt y
+x y : ℝ≥0
+h : x * x ≤ y
+⊢ ↑sqrt (↑sqrt (↑sqrt (↑sqrt (x * x) * ↑sqrt (x * x)))) *
+      (↑sqrt (↑sqrt (↑sqrt (↑sqrt (x * x) * ↑sqrt (x * x)))) *
+        (↑sqrt (↑sqrt (↑sqrt (↑sqrt (x * x) * ↑sqrt (x * x)))) *
+          ↑sqrt (↑sqrt (↑sqrt (↑sqrt (x * x) * ↑sqrt (x * x)))))) ≤
+    ↑sqrt y
+x y : ℝ≥0
+h : x * x ≤ y
+⊢ ↑sqrt (↑sqrt (↑sqrt (↑sqrt (x * x) * ↑sqrt (x * x))) * ↑sqrt (↑sqrt (↑sqrt (x * x) * ↑sqrt (x * x)))) *
+      ↑sqrt (↑sqrt (↑sqrt (↑sqrt (x * x) * ↑sqrt (x * x))) * ↑sqrt (↑sqrt (↑sqrt (x * x) * ↑sqrt (x * x)))) ≤
+    ↑sqrt y
+x y : ℝ≥0
+h : x * x ≤ y
+⊢ ↑sqrt (↑sqrt (↑sqrt (↑sqrt (x * x * (x * x))))) * ↑sqrt (↑sqrt (↑sqrt (↑sqrt (x * x * (x * x))))) *
+        ↑sqrt (↑sqrt (↑sqrt (↑sqrt (x * x * (x * x))))) *
+      ↑sqrt (↑sqrt (↑sqrt (↑sqrt (x * x * (x * x))))) ≤
+    ↑sqrt y
+x y : ℝ≥0
+h : x * x ≤ y
+⊢ ↑sqrt (↑sqrt (↑sqrt (↑sqrt (x * x * (x * x))))) *
+      (↑sqrt (↑sqrt (↑sqrt (↑sqrt (x * x * (x * x))))) *
+        (↑sqrt (↑sqrt (↑sqrt (↑sqrt (x * x * (x * x))))) * ↑sqrt (↑sqrt (↑sqrt (↑sqrt (x * x * (x * x))))))) ≤
+    ↑sqrt y
+x y : ℝ≥0
+h : x * x ≤ y
+⊢ ↑sqrt (↑sqrt (↑sqrt (↑sqrt (x * x * x * x))) * ↑sqrt (↑sqrt (↑sqrt (x * x * x * x)))) *
+      ↑sqrt (↑sqrt (↑sqrt (↑sqrt (x * x * x * x))) * ↑sqrt (↑sqrt (↑sqrt (x * x * x * x)))) ≤
+    ↑sqrt y
+x y : ℝ≥0
+h : x * x ≤ y
+⊢ ↑sqrt (↑sqrt (↑sqrt (↑sqrt (x * x)) * ↑sqrt (↑sqrt (x * x)))) *
+        ↑sqrt (↑sqrt (↑sqrt (↑sqrt (x * x)) * ↑sqrt (↑sqrt (x * x)))) *
+      (↑sqrt (↑sqrt (↑sqrt (↑sqrt (x * x)) * ↑sqrt (↑sqrt (x * x)))) *
+        ↑sqrt (↑sqrt (↑sqrt (↑sqrt (x * x)) * ↑sqrt (↑sqrt (x * x))))) ≤
+    ↑sqrt y
+x y : ℝ≥0
+h : x * x ≤ y
+⊢ ↑sqrt (↑sqrt (↑sqrt (↑sqrt (x * (x * (x * x))))) * ↑sqrt (↑sqrt (↑sqrt (x * (x * (x * x)))))) *
+      ↑sqrt (↑sqrt (↑sqrt (↑sqrt (x * (x * (x * x))))) * ↑sqrt (↑sqrt (↑sqrt (x * (x * (x * x)))))) ≤
+    ↑sqrt y
+x y : ℝ≥0
+h : x * x ≤ y
+⊢ ↑sqrt (↑sqrt (↑sqrt (↑sqrt (x * x))) * ↑sqrt (↑sqrt (↑sqrt (x * x)))) *
+        ↑sqrt (↑sqrt (↑sqrt (↑sqrt (x * x))) * ↑sqrt (↑sqrt (↑sqrt (x * x)))) *
+      (↑sqrt (↑sqrt (↑sqrt (↑sqrt (x * x))) * ↑sqrt (↑sqrt (↑sqrt (x * x)))) *
+        ↑sqrt (↑sqrt (↑sqrt (↑sqrt (x * x))) * ↑sqrt (↑sqrt (↑sqrt (x * x))))) ≤
+    ↑sqrt y
+x y : ℝ≥0
+h : x * x ≤ y
+⊢ ↑sqrt
+      (↑sqrt (↑sqrt (↑sqrt (x * x * (x * x)))) * ↑sqrt (↑sqrt (↑sqrt (x * x * (x * x)))) *
+        (↑sqrt (↑sqrt (↑sqrt (x * x * (x * x)))) * ↑sqrt (↑sqrt (↑sqrt (x * x * (x * x)))))) ≤
+    ↑sqrt y
+x y : ℝ≥0
+h : x * x ≤ y
+⊢ ↑sqrt (↑sqrt (↑sqrt (↑sqrt (↑sqrt ((x * x) ^ 2) * x * x)) * ↑sqrt (↑sqrt (↑sqrt ((x * x) ^ 2) * x * x)))) *
+      ↑sqrt (↑sqrt (↑sqrt (↑sqrt (↑sqrt ((x * x) ^ 2) * x * x)) * ↑sqrt (↑sqrt (↑sqrt ((x * x) ^ 2) * x * x)))) ≤
+    ↑sqrt y
+x y : ℝ≥0
+h : x * x ≤ y
+⊢ ↑sqrt
+      (↑sqrt (↑sqrt (↑sqrt (x * x * x * x)) * ↑sqrt (↑sqrt (x * x * x * x))) *
+        ↑sqrt (↑sqrt (↑sqrt (x * x * x * x)) * ↑sqrt (↑sqrt (x * x * x * x)))) ≤
+    ↑sqrt y
+x y : ℝ≥0
+h : x * x ≤ y
+⊢ ↑sqrt (↑sqrt (↑sqrt (x * x * x * x))) * ↑sqrt (↑sqrt (↑sqrt (x * x * x * x))) ≤ ↑sqrt y
+x y : ℝ≥0
+h : x * x ≤ y
+⊢ ↑sqrt (x * x * x * x) ≤ y
+x y : ℝ≥0
+h : x * x ≤ y
+⊢ ↑sqrt (↑sqrt (x * x * (x * x))) ≤ ↑sqrt y
+x y : ℝ≥0
+h : x * x ≤ y
+⊢ ↑sqrt (↑sqrt (↑sqrt (x * x * (x * x))) * ↑sqrt (↑sqrt (x * x * (x * x)))) ≤ ↑sqrt y
+x y : ℝ≥0
+h : x * x ≤ y
+⊢ ↑sqrt (↑sqrt (↑sqrt (↑sqrt ((x * x) ^ 2) * ↑sqrt ((x * x) ^ 2)))) *
+      ↑sqrt (↑sqrt (↑sqrt (↑sqrt ((x * x) ^ 2) * ↑sqrt ((x * x) ^ 2)))) ≤
+    ↑sqrt y
+x y : ℝ≥0
+h : x * x ≤ y
+⊢ ↑sqrt (↑sqrt (↑sqrt (↑sqrt x * ↑sqrt (x * (x * x))))) * ↑sqrt (↑sqrt (↑sqrt (↑sqrt x * ↑sqrt (x * (x * x))))) *
+      (↑sqrt (↑sqrt (↑sqrt (↑sqrt x * ↑sqrt (x * (x * x))))) * ↑sqrt (↑sqrt (↑sqrt (↑sqrt x * ↑sqrt (x * (x * x)))))) ≤
+    ↑sqrt y
+x y : ℝ≥0
+h : x * x ≤ y
+⊢ ↑sqrt (↑sqrt (↑sqrt (↑sqrt (x * (x * (x * x)))))) * ↑sqrt (↑sqrt (↑sqrt (↑sqrt (x * (x * (x * x)))))) *
+      (↑sqrt (↑sqrt (↑sqrt (↑sqrt (x * (x * (x * x)))))) * ↑sqrt (↑sqrt (↑sqrt (↑sqrt (x * (x * (x * x))))))) ≤
+    ↑sqrt y
+x y : ℝ≥0
+h : x * x ≤ y
+⊢ ↑sqrt
+      (↑sqrt (↑sqrt (↑sqrt (x * (x * (x * x)))) * ↑sqrt (↑sqrt (x * (x * (x * x))))) *
+        ↑sqrt (↑sqrt (↑sqrt (x * (x * (x * x)))) * ↑sqrt (↑sqrt (x * (x * (x * x)))))) ≤
+    ↑sqrt y
+x y : ℝ≥0
+h : x * x ≤ y
+⊢ ↑sqrt (↑sqrt (↑sqrt (x * (x * (x * x))))) * ↑sqrt (↑sqrt (↑sqrt (x * (x * (x * x))))) ≤ ↑sqrt y
+x y : ℝ≥0
+h : x * x ≤ y
+⊢ ↑sqrt (x * (x * (x * x))) ≤ y
+x y : ℝ≥0
+h : x * x ≤ y
+⊢ ↑sqrt (↑sqrt (↑sqrt (↑sqrt (↑sqrt ((x * x) ^ 2) * x * x)))) *
+        ↑sqrt (↑sqrt (↑sqrt (↑sqrt (↑sqrt ((x * x) ^ 2) * x * x)))) *
+      (↑sqrt (↑sqrt (↑sqrt (↑sqrt (↑sqrt ((x * x) ^ 2) * x * x)))) *
+        ↑sqrt (↑sqrt (↑sqrt (↑sqrt (↑sqrt ((x * x) ^ 2) * x * x))))) ≤
+    ↑sqrt y
+x y : ℝ≥0
+h : x * x ≤ y
+⊢ ↑sqrt (↑sqrt (↑sqrt (↑sqrt (x * x * x) * ↑sqrt x))) * ↑sqrt (↑sqrt (↑sqrt (↑sqrt (x * x * x) * ↑sqrt x))) *
+        ↑sqrt (↑sqrt (↑sqrt (↑sqrt (x * x * x) * ↑sqrt x))) *
+      ↑sqrt (↑sqrt (↑sqrt (↑sqrt (x * x * x) * ↑sqrt x))) ≤
+    ↑sqrt y
+x y : ℝ≥0
+h : x * x ≤ y
+⊢ ↑sqrt (↑sqrt (↑sqrt (↑sqrt (x * x * x) * ↑sqrt x))) *
+      (↑sqrt (↑sqrt (↑sqrt (↑sqrt (x * x * x) * ↑sqrt x))) *
+        (↑sqrt (↑sqrt (↑sqrt (↑sqrt (x * x * x) * ↑sqrt x))) * ↑sqrt (↑sqrt (↑sqrt (↑sqrt (x * x * x) * ↑sqrt x))))) ≤
+    ↑sqrt y
+x y : ℝ≥0
+h : x * x ≤ y
+⊢ ↑sqrt (↑sqrt (↑sqrt (↑sqrt (x * (x * x)) * ↑sqrt x))) *
+      (↑sqrt (↑sqrt (↑sqrt (↑sqrt (x * (x * x)) * ↑sqrt x))) *
+        (↑sqrt (↑sqrt (↑sqrt (↑sqrt (x * (x * x)) * ↑sqrt x))) *
+          ↑sqrt (↑sqrt (↑sqrt (↑sqrt (x * (x * x)) * ↑sqrt x))))) ≤
+    ↑sqrt y
+x y : ℝ≥0
+h : x * x ≤ y
+⊢ ↑sqrt (↑sqrt (↑sqrt (↑sqrt (x * x * x) * ↑sqrt x)) * ↑sqrt (↑sqrt (↑sqrt (x * x * x) * ↑sqrt x))) *
+      ↑sqrt (↑sqrt (↑sqrt (↑sqrt (x * x * x) * ↑sqrt x)) * ↑sqrt (↑sqrt (↑sqrt (x * x * x) * ↑sqrt x))) ≤
+    ↑sqrt y
+x y : ℝ≥0
+h : x * x ≤ y
+⊢ ↑sqrt (↑sqrt (↑sqrt (↑sqrt (x * x * x * x)))) * ↑sqrt (↑sqrt (↑sqrt (↑sqrt (x * x * x * x)))) *
+        ↑sqrt (↑sqrt (↑sqrt (↑sqrt (x * x * x * x)))) *
+      ↑sqrt (↑sqrt (↑sqrt (↑sqrt (x * x * x * x)))) ≤
+    ↑sqrt y
+x y : ℝ≥0
+h : x * x ≤ y
+⊢ ↑sqrt (↑sqrt (↑sqrt (↑sqrt (x * x * x * x)))) *
+      (↑sqrt (↑sqrt (↑sqrt (↑sqrt (x * x * x * x)))) *
+        (↑sqrt (↑sqrt (↑sqrt (↑sqrt (x * x * x * x)))) * ↑sqrt (↑sqrt (↑sqrt (↑sqrt (x * x * x * x)))))) ≤
+    ↑sqrt y
+x y : ℝ≥0
+h : x * x ≤ y
+⊢ ↑sqrt (↑sqrt (↑sqrt (x * x * x)) * ↑sqrt (↑sqrt x)) * ↑sqrt (↑sqrt (↑sqrt (x * x * x)) * ↑sqrt (↑sqrt x)) ≤ ↑sqrt y
+x y : ℝ≥0
+h : x * x ≤ y
+⊢ ↑sqrt (↑sqrt (↑sqrt (x * x * x))) * ↑sqrt (↑sqrt (↑sqrt x)) *
+      (↑sqrt (↑sqrt (↑sqrt (x * x * x))) * ↑sqrt (↑sqrt (↑sqrt x))) ≤
+    ↑sqrt y
+x y : ℝ≥0
+h : x * x ≤ y
+⊢ ↑sqrt (↑sqrt (↑sqrt (x * x * x * x)) * ↑sqrt (↑sqrt (x * x * x * x))) ≤ ↑sqrt y
+x y : ℝ≥0
+h : x * x ≤ y
+⊢ ↑sqrt (↑sqrt (↑sqrt (↑sqrt ((x * x) ^ 2) * x * x))) * ↑sqrt (↑sqrt (↑sqrt (↑sqrt ((x * x) ^ 2) * x * x))) ≤ ↑sqrt y
+x y : ℝ≥0
+h : x * x ≤ y
+⊢ ↑sqrt (↑sqrt (↑sqrt (x * x * x) * ↑sqrt x)) * ↑sqrt (↑sqrt (↑sqrt (x * x * x) * ↑sqrt x)) ≤ ↑sqrt y
+x y : ℝ≥0
+h : x * x ≤ y
+⊢ ↑sqrt (↑sqrt (↑sqrt (↑sqrt (x * x * x))) * ↑sqrt (↑sqrt (↑sqrt x))) *
+        ↑sqrt (↑sqrt (↑sqrt (↑sqrt (x * x * x))) * ↑sqrt (↑sqrt (↑sqrt x))) *
+      (↑sqrt (↑sqrt (↑sqrt (↑sqrt (x * x * x))) * ↑sqrt (↑sqrt (↑sqrt x))) *
+        ↑sqrt (↑sqrt (↑sqrt (↑sqrt (x * x * x))) * ↑sqrt (↑sqrt (↑sqrt x)))) ≤
+    ↑sqrt y
+x y : ℝ≥0
+h : x * x ≤ y
+⊢ ↑sqrt (↑sqrt (↑sqrt (↑sqrt (x * x * x)) * ↑sqrt (↑sqrt x))) *
+        ↑sqrt (↑sqrt (↑sqrt (↑sqrt (x * x * x)) * ↑sqrt (↑sqrt x))) *
+      (↑sqrt (↑sqrt (↑sqrt (↑sqrt (x * x * x)) * ↑sqrt (↑sqrt x))) *
+        ↑sqrt (↑sqrt (↑sqrt (↑sqrt (x * x * x)) * ↑sqrt (↑sqrt x)))) ≤
+    ↑sqrt y
+x y : ℝ≥0
+h : x * x ≤ y
+⊢ ↑sqrt (↑sqrt (x * x * x * x)) ≤ ↑sqrt y
+x y : ℝ≥0
+h : x * x ≤ y
+⊢ ↑sqrt
+      (↑sqrt
+        (↑sqrt (↑sqrt (x * x * x * x) * ↑sqrt (x * x * x * x)) *
+          ↑sqrt (↑sqrt (x * x * x * x) * ↑sqrt (x * x * x * x)))) ≤
+    ↑sqrt y
+x y : ℝ≥0
+h : x * x ≤ y
+⊢ ↑sqrt
+      (↑sqrt
+        (↑sqrt (↑sqrt (x * x * x * x)) * ↑sqrt (↑sqrt (x * x * x * x)) *
+          (↑sqrt (↑sqrt (x * x * x * x)) * ↑sqrt (↑sqrt (x * x * x * x))))) ≤
+    ↑sqrt y
+x y : ℝ≥0
+h : x * x ≤ y
+⊢ ↑sqrt (x * x * x) * ↑sqrt x ≤ y
+x y : ℝ≥0
+h : x * x ≤ y
+⊢ ↑sqrt (↑sqrt (↑sqrt (↑sqrt x * ↑sqrt (x * (x * x))))) * ↑sqrt (↑sqrt (↑sqrt (↑sqrt x * ↑sqrt (x * (x * x))))) *
+        ↑sqrt (↑sqrt (↑sqrt (↑sqrt x * ↑sqrt (x * (x * x))))) *
+      ↑sqrt (↑sqrt (↑sqrt (↑sqrt x * ↑sqrt (x * (x * x))))) ≤
+    ↑sqrt y
+x y : ℝ≥0
+h : x * x ≤ y
+⊢ ↑sqrt (↑sqrt (↑sqrt (↑sqrt x * ↑sqrt (x * (x * x))))) *
+      (↑sqrt (↑sqrt (↑sqrt (↑sqrt x * ↑sqrt (x * (x * x))))) *
+        (↑sqrt (↑sqrt (↑sqrt (↑sqrt x * ↑sqrt (x * (x * x))))) *
+          ↑sqrt (↑sqrt (↑sqrt (↑sqrt x * ↑sqrt (x * (x * x))))))) ≤
+    ↑sqrt y
+x y : ℝ≥0
+h : x * x ≤ y
+⊢ ↑sqrt (↑sqrt (↑sqrt (↑sqrt x * ↑sqrt (x * (x * x)))) * ↑sqrt (↑sqrt (↑sqrt x * ↑sqrt (x * (x * x))))) *
+      ↑sqrt (↑sqrt (↑sqrt (↑sqrt x * ↑sqrt (x * (x * x)))) * ↑sqrt (↑sqrt (↑sqrt x * ↑sqrt (x * (x * x))))) ≤
+    ↑sqrt y
+x y : ℝ≥0
+h : x * x ≤ y
+⊢ ↑sqrt (↑sqrt (↑sqrt (↑sqrt x)) * ↑sqrt (↑sqrt (↑sqrt (x * (x * x))))) *
+        ↑sqrt (↑sqrt (↑sqrt (↑sqrt x)) * ↑sqrt (↑sqrt (↑sqrt (x * (x * x))))) *
+      (↑sqrt (↑sqrt (↑sqrt (↑sqrt x)) * ↑sqrt (↑sqrt (↑sqrt (x * (x * x))))) *
+        ↑sqrt (↑sqrt (↑sqrt (↑sqrt x)) * ↑sqrt (↑sqrt (↑sqrt (x * (x * x)))))) ≤
+    ↑sqrt y
+x y : ℝ≥0
+h : x * x ≤ y
+⊢ ↑sqrt (↑sqrt (↑sqrt (↑sqrt (x * (x * (x * x)))))) * ↑sqrt (↑sqrt (↑sqrt (↑sqrt (x * (x * (x * x)))))) *
+        ↑sqrt (↑sqrt (↑sqrt (↑sqrt (x * (x * (x * x)))))) *
+      ↑sqrt (↑sqrt (↑sqrt (↑sqrt (x * (x * (x * x)))))) ≤
+    ↑sqrt y
+x y : ℝ≥0
+h : x * x ≤ y
+⊢ ↑sqrt (↑sqrt (↑sqrt x)) * ↑sqrt (↑sqrt (↑sqrt (x * (x * x)))) *
+      (↑sqrt (↑sqrt (↑sqrt x)) * ↑sqrt (↑sqrt (↑sqrt (x * (x * x))))) ≤
+    ↑sqrt y
+x y : ℝ≥0
+h : x * x ≤ y
+⊢ ↑sqrt (↑sqrt (↑sqrt x) * ↑sqrt (↑sqrt (x * (x * x)))) * ↑sqrt (↑sqrt (↑sqrt x) * ↑sqrt (↑sqrt (x * (x * x)))) ≤
+    ↑sqrt y
+x y : ℝ≥0
+h : x * x ≤ y
+⊢ ↑sqrt (x * x * (x * x)) ≤ y
+x y : ℝ≥0
+h : x * x ≤ y
+⊢ ↑sqrt (↑sqrt (↑sqrt (x * (x * (x * x)))) * ↑sqrt (↑sqrt (x * (x * (x * x))))) ≤ ↑sqrt y
+x y : ℝ≥0
+h : x * x ≤ y
+⊢ ↑sqrt (↑sqrt (↑sqrt (↑sqrt (x * (x * (x * x)))))) *
+      (↑sqrt (↑sqrt (↑sqrt (↑sqrt (x * (x * (x * x)))))) *
+        (↑sqrt (↑sqrt (↑sqrt (↑sqrt (x * (x * (x * x)))))) * ↑sqrt (↑sqrt (↑sqrt (↑sqrt (x * (x * (x * x)))))))) ≤
+    ↑sqrt y
+x y : ℝ≥0
+h : x * x ≤ y
+⊢ ↑sqrt (↑sqrt (↑sqrt x * ↑sqrt (x * (x * x)))) * ↑sqrt (↑sqrt (↑sqrt x * ↑sqrt (x * (x * x)))) ≤ ↑sqrt y
+x y : ℝ≥0
+h : x * x ≤ y
+⊢ ↑sqrt (↑sqrt (↑sqrt (↑sqrt x) * ↑sqrt (↑sqrt (x * (x * x))))) *
+        ↑sqrt (↑sqrt (↑sqrt (↑sqrt x) * ↑sqrt (↑sqrt (x * (x * x))))) *
+      (↑sqrt (↑sqrt (↑sqrt (↑sqrt x) * ↑sqrt (↑sqrt (x * (x * x))))) *
+        ↑sqrt (↑sqrt (↑sqrt (↑sqrt x) * ↑sqrt (↑sqrt (x * (x * x)))))) ≤
+    ↑sqrt y
+x y : ℝ≥0
+h : x * x ≤ y
+⊢ ↑sqrt (↑sqrt (x * (x * (x * x)))) ≤ ↑sqrt y
+x y : ℝ≥0
+h : x * x ≤ y
+⊢ ↑sqrt x * ↑sqrt (x * (x * x)) ≤ y
+x y : ℝ≥0
+h : x * x ≤ y
+⊢ ↑sqrt
+      (↑sqrt (↑sqrt (↑sqrt (↑sqrt ((x * x) ^ 2) * x * x)) * ↑sqrt (↑sqrt (↑sqrt ((x * x) ^ 2) * x * x))) *
+        ↑sqrt (↑sqrt (↑sqrt (↑sqrt ((x * x) ^ 2) * x * x)) * ↑sqrt (↑sqrt (↑sqrt ((x * x) ^ 2) * x * x)))) ≤
+    ↑sqrt y
+x y : ℝ≥0
+h : x * x ≤ y
+⊢ ↑sqrt (↑sqrt (↑sqrt (↑sqrt (↑sqrt ((x * x) ^ 2) * (x * x))) * ↑sqrt (↑sqrt (↑sqrt ((x * x) ^ 2) * (x * x))))) *
+      ↑sqrt (↑sqrt (↑sqrt (↑sqrt (↑sqrt ((x * x) ^ 2) * (x * x))) * ↑sqrt (↑sqrt (↑sqrt ((x * x) ^ 2) * (x * x))))) ≤
+    ↑sqrt y
+x y : ℝ≥0
+h : x * x ≤ y
+⊢ ↑sqrt (↑sqrt (↑sqrt (↑sqrt (↑sqrt ((x * x) ^ 2) * x * x))) * ↑sqrt (↑sqrt (↑sqrt (↑sqrt ((x * x) ^ 2) * x * x)))) *
+      ↑sqrt
+        (↑sqrt (↑sqrt (↑sqrt (↑sqrt ((x * x) ^ 2) * x * x))) * ↑sqrt (↑sqrt (↑sqrt (↑sqrt ((x * x) ^ 2) * x * x)))) ≤
+    ↑sqrt y
+x y : ℝ≥0
+h : x * x ≤ y
+⊢ ↑sqrt (↑sqrt (↑sqrt (x * x * x))) * ↑sqrt (↑sqrt (↑sqrt x)) * ↑sqrt (↑sqrt (↑sqrt (x * x * x))) *
+      ↑sqrt (↑sqrt (↑sqrt x)) ≤
+    ↑sqrt y
+x y : ℝ≥0
+h : x * x ≤ y
+⊢ ↑sqrt (↑sqrt (↑sqrt (x * x))) * ↑sqrt (↑sqrt (↑sqrt x)) * ↑sqrt (↑sqrt (↑sqrt x)) *
+      (↑sqrt (↑sqrt (↑sqrt (x * x))) * ↑sqrt (↑sqrt (↑sqrt x)) * ↑sqrt (↑sqrt (↑sqrt x))) ≤
+    ↑sqrt y
+x y : ℝ≥0
+h : x * x ≤ y
+⊢ ↑sqrt (↑sqrt (↑sqrt (x * x)) * ↑sqrt (↑sqrt x)) * ↑sqrt (↑sqrt (↑sqrt x)) *
+      (↑sqrt (↑sqrt (↑sqrt (x * x)) * ↑sqrt (↑sqrt x)) * ↑sqrt (↑sqrt (↑sqrt x))) ≤
+    ↑sqrt y
+x y : ℝ≥0
+h : x * x ≤ y
+⊢ ↑sqrt (↑sqrt (↑sqrt (x * x * x))) *
+      (↑sqrt (↑sqrt (↑sqrt x)) * (↑sqrt (↑sqrt (↑sqrt (x * x * x))) * ↑sqrt (↑sqrt (↑sqrt x)))) ≤
+    ↑sqrt y
+x y : ℝ≥0
+h : x * x ≤ y
+⊢ ↑sqrt (↑sqrt (↑sqrt (↑sqrt ((x * x) ^ 2) * x)) * ↑sqrt (↑sqrt x)) *
+      ↑sqrt (↑sqrt (↑sqrt (↑sqrt ((x * x) ^ 2) * x)) * ↑sqrt (↑sqrt x)) ≤
+    ↑sqrt y
+x y : ℝ≥0
+h : x * x ≤ y
+⊢ ↑sqrt (↑sqrt (↑sqrt (↑sqrt ((x * x) ^ 2) * x * x)) * ↑sqrt (↑sqrt (↑sqrt ((x * x) ^ 2) * x * x))) ≤ ↑sqrt y
+x y : ℝ≥0
+h : x * x ≤ y
+⊢ ↑sqrt (↑sqrt (↑sqrt (x * x) * ↑sqrt x)) * ↑sqrt (↑sqrt (↑sqrt x)) *
+      (↑sqrt (↑sqrt (↑sqrt (x * x) * ↑sqrt x)) * ↑sqrt (↑sqrt (↑sqrt x))) ≤
+    ↑sqrt y
+x y : ℝ≥0
+h : x * x ≤ y
+⊢ ↑sqrt (↑sqrt (↑sqrt (↑sqrt (x * (x * x)) * ↑sqrt x))) * ↑sqrt (↑sqrt (↑sqrt (↑sqrt (x * (x * x)) * ↑sqrt x))) *
+      (↑sqrt (↑sqrt (↑sqrt (↑sqrt (x * (x * x)) * ↑sqrt x))) * ↑sqrt (↑sqrt (↑sqrt (↑sqrt (x * (x * x)) * ↑sqrt x)))) ≤
+    ↑sqrt y
+x y : ℝ≥0
+h : x * x ≤ y
+⊢ ↑sqrt (↑sqrt (↑sqrt (↑sqrt (x * (x * x)) * ↑sqrt x))) * ↑sqrt (↑sqrt (↑sqrt (↑sqrt (x * (x * x)) * ↑sqrt x))) *
+        ↑sqrt (↑sqrt (↑sqrt (↑sqrt (x * (x * x)) * ↑sqrt x))) *
+      ↑sqrt (↑sqrt (↑sqrt (↑sqrt (x * (x * x)) * ↑sqrt x))) ≤
+    ↑sqrt y
+x y : ℝ≥0
+h : x * x ≤ y
+⊢ ↑sqrt (↑sqrt (↑sqrt (↑sqrt (x * x * x)))) * ↑sqrt (↑sqrt (↑sqrt (↑sqrt x))) *
+        (↑sqrt (↑sqrt (↑sqrt (↑sqrt (x * x * x)))) * ↑sqrt (↑sqrt (↑sqrt (↑sqrt x)))) *
+      (↑sqrt (↑sqrt (↑sqrt (↑sqrt (x * x * x)))) * ↑sqrt (↑sqrt (↑sqrt (↑sqrt x))) *
+        (↑sqrt (↑sqrt (↑sqrt (↑sqrt (x * x * x)))) * ↑sqrt (↑sqrt (↑sqrt (↑sqrt x))))) ≤
+    ↑sqrt y
+x y : ℝ≥0
+h : x * x ≤ y
+⊢ ↑sqrt (↑sqrt (↑sqrt (↑sqrt (x * x * x))) * ↑sqrt (↑sqrt (↑sqrt x))) *
+          ↑sqrt (↑sqrt (↑sqrt (↑sqrt (x * x * x))) * ↑sqrt (↑sqrt (↑sqrt x))) *
+        ↑sqrt (↑sqrt (↑sqrt (↑sqrt (x * x * x))) * ↑sqrt (↑sqrt (↑sqrt x))) *
+      ↑sqrt (↑sqrt (↑sqrt (↑sqrt (x * x * x))) * ↑sqrt (↑sqrt (↑sqrt x))) ≤
+    ↑sqrt y
+x y : ℝ≥0
+h : x * x ≤ y
+⊢ ↑sqrt (↑sqrt (↑sqrt (↑sqrt (x * (x * x) * x)))) *
+      (↑sqrt (↑sqrt (↑sqrt (↑sqrt (x * (x * x) * x)))) *
+        (↑sqrt (↑sqrt (↑sqrt (↑sqrt (x * (x * x) * x)))) * ↑sqrt (↑sqrt (↑sqrt (↑sqrt (x * (x * x) * x)))))) ≤
+    ↑sqrt y
+x y : ℝ≥0
+h : x * x ≤ y
+⊢ ↑sqrt (↑sqrt (↑sqrt (↑sqrt (x * x * x))) * ↑sqrt (↑sqrt (↑sqrt x))) *
+      (↑sqrt (↑sqrt (↑sqrt (↑sqrt (x * x * x))) * ↑sqrt (↑sqrt (↑sqrt x))) *
+        (↑sqrt (↑sqrt (↑sqrt (↑sqrt (x * x * x))) * ↑sqrt (↑sqrt (↑sqrt x))) *
+          ↑sqrt (↑sqrt (↑sqrt (↑sqrt (x * x * x))) * ↑sqrt (↑sqrt (↑sqrt x))))) ≤
+    ↑sqrt y
+x y : ℝ≥0
+h : x * x ≤ y
+⊢ ↑sqrt (↑sqrt (↑sqrt (↑sqrt (x * (x * x)))) * ↑sqrt (↑sqrt (↑sqrt x))) *
+      (↑sqrt (↑sqrt (↑sqrt (↑sqrt (x * (x * x)))) * ↑sqrt (↑sqrt (↑sqrt x))) *
+        (↑sqrt (↑sqrt (↑sqrt (↑sqrt (x * (x * x)))) * ↑sqrt (↑sqrt (↑sqrt x))) *
+          ↑sqrt (↑sqrt (↑sqrt (↑sqrt (x * (x * x)))) * ↑sqrt (↑sqrt (↑sqrt x))))) ≤
+    ↑sqrt y
+x y : ℝ≥0
+h : x * x ≤ y
+⊢ ↑sqrt
+        (↑sqrt (↑sqrt (↑sqrt (x * x * x))) * ↑sqrt (↑sqrt (↑sqrt x)) *
+          (↑sqrt (↑sqrt (↑sqrt (x * x * x))) * ↑sqrt (↑sqrt (↑sqrt x)))) *
+      ↑sqrt
+        (↑sqrt (↑sqrt (↑sqrt (x * x * x))) * ↑sqrt (↑sqrt (↑sqrt x)) *
+          (↑sqrt (↑sqrt (↑sqrt (x * x * x))) * ↑sqrt (↑sqrt (↑sqrt x)))) ≤
+    ↑sqrt y
+x y : ℝ≥0
+h : x * x ≤ y
+⊢ ↑sqrt (↑sqrt (↑sqrt (↑sqrt (x * x) * ↑sqrt x))) * ↑sqrt (↑sqrt (↑sqrt (↑sqrt x))) *
+        (↑sqrt (↑sqrt (↑sqrt (↑sqrt (x * x) * ↑sqrt x))) * ↑sqrt (↑sqrt (↑sqrt (↑sqrt x)))) *
+      (↑sqrt (↑sqrt (↑sqrt (↑sqrt (x * x) * ↑sqrt x))) * ↑sqrt (↑sqrt (↑sqrt (↑sqrt x))) *
+        (↑sqrt (↑sqrt (↑sqrt (↑sqrt (x * x) * ↑sqrt x))) * ↑sqrt (↑sqrt (↑sqrt (↑sqrt x))))) ≤
+    ↑sqrt y
+x y : ℝ≥0
+h : x * x ≤ y
+⊢ ↑sqrt
+      (↑sqrt (↑sqrt (↑sqrt (x * x * x) * ↑sqrt x) * ↑sqrt (↑sqrt (x * x * x) * ↑sqrt x)) *
+        ↑sqrt (↑sqrt (↑sqrt (x * x * x) * ↑sqrt x) * ↑sqrt (↑sqrt (x * x * x) * ↑sqrt x))) ≤
+    ↑sqrt y
+x y : ℝ≥0
+h : x * x ≤ y
+⊢ ↑sqrt (↑sqrt (↑sqrt (↑sqrt (x * (x * x)) * ↑sqrt x)) * ↑sqrt (↑sqrt (↑sqrt (x * (x * x)) * ↑sqrt x))) *
+      ↑sqrt (↑sqrt (↑sqrt (↑sqrt (x * (x * x)) * ↑sqrt x)) * ↑sqrt (↑sqrt (↑sqrt (x * (x * x)) * ↑sqrt x))) ≤
+    ↑sqrt y
+x y : ℝ≥0
+h : x * x ≤ y
+⊢ ↑sqrt
+      (↑sqrt (↑sqrt (↑sqrt (x * x * x) * ↑sqrt x)) * ↑sqrt (↑sqrt (↑sqrt (x * x * x) * ↑sqrt x)) *
+        (↑sqrt (↑sqrt (↑sqrt (x * x * x) * ↑sqrt x)) * ↑sqrt (↑sqrt (↑sqrt (x * x * x) * ↑sqrt x)))) ≤
+    ↑sqrt y
+x y : ℝ≥0
+h : x * x ≤ y
+⊢ ↑sqrt (x * (x * x)) * ↑sqrt x ≤ y
+x y : ℝ≥0
+h : x * x ≤ y
+⊢ ↑sqrt (↑sqrt (↑sqrt (↑sqrt (↑sqrt ((x * x) ^ 2) ^ 2))) * ↑sqrt (↑sqrt (↑sqrt (↑sqrt ((x * x) ^ 2) ^ 2)))) *
+      ↑sqrt (↑sqrt (↑sqrt (↑sqrt (↑sqrt ((x * x) ^ 2) ^ 2))) * ↑sqrt (↑sqrt (↑sqrt (↑sqrt ((x * x) ^ 2) ^ 2)))) ≤
+    ↑sqrt y
+x y : ℝ≥0
+h : x * x ≤ y
+⊢ ↑sqrt
+        (↑sqrt
+          (↑sqrt (↑sqrt (↑sqrt ((x * x) ^ 2) * ↑sqrt ((x * x) ^ 2))) *
+            ↑sqrt (↑sqrt (↑sqrt ((x * x) ^ 2) * ↑sqrt ((x * x) ^ 2))))) *
+      ↑sqrt
+        (↑sqrt
+          (↑sqrt (↑sqrt (↑sqrt ((x * x) ^ 2) * ↑sqrt ((x * x) ^ 2))) *
+            ↑sqrt (↑sqrt (↑sqrt ((x * x) ^ 2) * ↑sqrt ((x * x) ^ 2))))) ≤
+    ↑sqrt y
+x y : ℝ≥0
+h : x * x ≤ y
+⊢ ↑sqrt (↑sqrt (↑sqrt (↑sqrt ((x * x) ^ 2) * x) * ↑sqrt x)) *
+      ↑sqrt (↑sqrt (↑sqrt (↑sqrt ((x * x) ^ 2) * x) * ↑sqrt x)) ≤
+    ↑sqrt y
+x y : ℝ≥0
+h : x * x ≤ y
+⊢ ↑sqrt (↑sqrt (↑sqrt (↑sqrt ((x * x) ^ 2) * (x * x)))) * ↑sqrt (↑sqrt (↑sqrt (↑sqrt ((x * x) ^ 2) * (x * x)))) ≤
+    ↑sqrt y
+x y : ℝ≥0
+h : x * x ≤ y
+⊢ ↑sqrt
+      (↑sqrt
+        (↑sqrt (↑sqrt (↑sqrt ((x * x) ^ 2) ^ 2) * ↑sqrt (↑sqrt ((x * x) ^ 2) ^ 2)) *
+          ↑sqrt (↑sqrt (↑sqrt ((x * x) ^ 2) ^ 2) * ↑sqrt (↑sqrt ((x * x) ^ 2) ^ 2)))) ≤
+    ↑sqrt y
+x y : ℝ≥0
+h : x * x ≤ y
+⊢ ↑sqrt (↑sqrt (↑sqrt (↑sqrt (↑sqrt ((x * x) ^ 2) ^ 2)))) * ↑sqrt (↑sqrt (↑sqrt (↑sqrt (↑sqrt ((x * x) ^ 2) ^ 2)))) *
+        ↑sqrt (↑sqrt (↑sqrt (↑sqrt (↑sqrt ((x * x) ^ 2) ^ 2)))) *
+      ↑sqrt (↑sqrt (↑sqrt (↑sqrt (↑sqrt ((x * x) ^ 2) ^ 2)))) ≤
+    ↑sqrt y
+x y : ℝ≥0
+h : x * x ≤ y
+⊢ ↑sqrt (↑sqrt (↑sqrt (↑sqrt (↑sqrt ((x * x) ^ 2) ^ 2)))) *
+      (↑sqrt (↑sqrt (↑sqrt (↑sqrt (↑sqrt ((x * x) ^ 2) ^ 2)))) *
+        (↑sqrt (↑sqrt (↑sqrt (↑sqrt (↑sqrt ((x * x) ^ 2) ^ 2)))) *
+          ↑sqrt (↑sqrt (↑sqrt (↑sqrt (↑sqrt ((x * x) ^ 2) ^ 2)))))) ≤
+    ↑sqrt y
+x y : ℝ≥0
+h : x * x ≤ y
+⊢ ↑sqrt
+      (↑sqrt
+        (↑sqrt (↑sqrt (↑sqrt ((x * x) ^ 2) * ↑sqrt ((x * x) ^ 2))) *
+            ↑sqrt (↑sqrt (↑sqrt ((x * x) ^ 2) * ↑sqrt ((x * x) ^ 2))) *
+          (↑sqrt (↑sqrt (↑sqrt ((x * x) ^ 2) * ↑sqrt ((x * x) ^ 2))) *
+            ↑sqrt (↑sqrt (↑sqrt ((x * x) ^ 2) * ↑sqrt ((x * x) ^ 2)))))) ≤
+    ↑sqrt y
+x y : ℝ≥0
+h : x * x ≤ y
+⊢ ↑sqrt
+      (↑sqrt
+        (↑sqrt (↑sqrt (↑sqrt ((x * x) ^ 2) ^ 2)) * ↑sqrt (↑sqrt (↑sqrt ((x * x) ^ 2) ^ 2)) *
+          (↑sqrt (↑sqrt (↑sqrt ((x * x) ^ 2) ^ 2)) * ↑sqrt (↑sqrt (↑sqrt ((x * x) ^ 2) ^ 2))))) ≤
+    ↑sqrt y
+x y : ℝ≥0
+h : x * x ≤ y
+⊢ ↑sqrt
+      (↑sqrt
+          (↑sqrt (↑sqrt (↑sqrt ((x * x) ^ 2) * ↑sqrt ((x * x) ^ 2))) *
+            ↑sqrt (↑sqrt (↑sqrt ((x * x) ^ 2) * ↑sqrt ((x * x) ^ 2)))) *
+        ↑sqrt
+          (↑sqrt (↑sqrt (↑sqrt ((x * x) ^ 2) * ↑sqrt ((x * x) ^ 2))) *
+            ↑sqrt (↑sqrt (↑sqrt ((x * x) ^ 2) * ↑sqrt ((x * x) ^ 2))))) ≤
+    ↑sqrt y
+x y : ℝ≥0
+h : x * x ≤ y
+⊢ ↑sqrt (↑sqrt (↑sqrt (↑sqrt (↑sqrt ((x * x) ^ 2) * ↑sqrt ((x * x) ^ 2))))) *
+        ↑sqrt (↑sqrt (↑sqrt (↑sqrt (↑sqrt ((x * x) ^ 2) * ↑sqrt ((x * x) ^ 2))))) *
+      (↑sqrt (↑sqrt (↑sqrt (↑sqrt (↑sqrt ((x * x) ^ 2) * ↑sqrt ((x * x) ^ 2))))) *
+        ↑sqrt (↑sqrt (↑sqrt (↑sqrt (↑sqrt ((x * x) ^ 2) * ↑sqrt ((x * x) ^ 2)))))) ≤
+    ↑sqrt y
+x y : ℝ≥0
+h : x * x ≤ y
+⊢ ↑sqrt (↑sqrt (↑sqrt (↑sqrt x)) * ↑sqrt (↑sqrt (↑sqrt (x * (x * x))))) *
+          ↑sqrt (↑sqrt (↑sqrt (↑sqrt x)) * ↑sqrt (↑sqrt (↑sqrt (x * (x * x))))) *
+        ↑sqrt (↑sqrt (↑sqrt (↑sqrt x)) * ↑sqrt (↑sqrt (↑sqrt (x * (x * x))))) *
+      ↑sqrt (↑sqrt (↑sqrt (↑sqrt x)) * ↑sqrt (↑sqrt (↑sqrt (x * (x * x))))) ≤
+    ↑sqrt y
+x y : ℝ≥0
+h : x * x ≤ y
+⊢ ↑sqrt (↑sqrt (↑sqrt (↑sqrt x)) * ↑sqrt (↑sqrt (↑sqrt (x * (x * x))))) *
+      (↑sqrt (↑sqrt (↑sqrt (↑sqrt x)) * ↑sqrt (↑sqrt (↑sqrt (x * (x * x))))) *
+        (↑sqrt (↑sqrt (↑sqrt (↑sqrt x)) * ↑sqrt (↑sqrt (↑sqrt (x * (x * x))))) *
+          ↑sqrt (↑sqrt (↑sqrt (↑sqrt x)) * ↑sqrt (↑sqrt (↑sqrt (x * (x * x))))))) ≤
+    ↑sqrt y
+x y : ℝ≥0
+h : x * x ≤ y
+⊢ ↑sqrt (↑sqrt (↑sqrt (↑sqrt x * ↑sqrt (x * x * x))) * ↑sqrt (↑sqrt (↑sqrt x * ↑sqrt (x * x * x)))) *
+      ↑sqrt (↑sqrt (↑sqrt (↑sqrt x * ↑sqrt (x * x * x))) * ↑sqrt (↑sqrt (↑sqrt x * ↑sqrt (x * x * x)))) ≤
+    ↑sqrt y
+x y : ℝ≥0
+h : x * x ≤ y
+⊢ ↑sqrt (↑sqrt (↑sqrt (↑sqrt x * ↑sqrt (x * x * x)))) * ↑sqrt (↑sqrt (↑sqrt (↑sqrt x * ↑sqrt (x * x * x)))) *
+        ↑sqrt (↑sqrt (↑sqrt (↑sqrt x * ↑sqrt (x * x * x)))) *
+      ↑sqrt (↑sqrt (↑sqrt (↑sqrt x * ↑sqrt (x * x * x)))) ≤
+    ↑sqrt y
+x y : ℝ≥0
+h : x * x ≤ y
+⊢ ↑sqrt
+        (↑sqrt (↑sqrt (↑sqrt x)) * ↑sqrt (↑sqrt (↑sqrt (x * (x * x)))) *
+          (↑sqrt (↑sqrt (↑sqrt x)) * ↑sqrt (↑sqrt (↑sqrt (x * (x * x)))))) *
+      ↑sqrt
+        (↑sqrt (↑sqrt (↑sqrt x)) * ↑sqrt (↑sqrt (↑sqrt (x * (x * x)))) *
+          (↑sqrt (↑sqrt (↑sqrt x)) * ↑sqrt (↑sqrt (↑sqrt (x * (x * x)))))) ≤
+    ↑sqrt y
+x y : ℝ≥0
+h : x * x ≤ y
+⊢ ↑sqrt (↑sqrt (↑sqrt (↑sqrt x))) * ↑sqrt (↑sqrt (↑sqrt (↑sqrt x * ↑sqrt (x * x)))) *
+        (↑sqrt (↑sqrt (↑sqrt (↑sqrt x))) * ↑sqrt (↑sqrt (↑sqrt (↑sqrt x * ↑sqrt (x * x))))) *
+      (↑sqrt (↑sqrt (↑sqrt (↑sqrt x))) * ↑sqrt (↑sqrt (↑sqrt (↑sqrt x * ↑sqrt (x * x)))) *
+        (↑sqrt (↑sqrt (↑sqrt (↑sqrt x))) * ↑sqrt (↑sqrt (↑sqrt (↑sqrt x * ↑sqrt (x * x)))))) ≤
+    ↑sqrt y
+x y : ℝ≥0
+h : x * x ≤ y
+⊢ ↑sqrt (↑sqrt (↑sqrt (↑sqrt x))) * ↑sqrt (↑sqrt (↑sqrt (↑sqrt (x * (x * x))))) *
+          (↑sqrt (↑sqrt (↑sqrt (↑sqrt x))) * ↑sqrt (↑sqrt (↑sqrt (↑sqrt (x * (x * x)))))) *
+        (↑sqrt (↑sqrt (↑sqrt (↑sqrt x))) * ↑sqrt (↑sqrt (↑sqrt (↑sqrt (x * (x * x)))))) *
+      (↑sqrt (↑sqrt (↑sqrt (↑sqrt x))) * ↑sqrt (↑sqrt (↑sqrt (↑sqrt (x * (x * x)))))) ≤
+    ↑sqrt y
+x y : ℝ≥0
+h : x * x ≤ y
+⊢ ↑sqrt (↑sqrt (↑sqrt (↑sqrt x * ↑sqrt (x * (x * x)))) * ↑sqrt (↑sqrt (↑sqrt x * ↑sqrt (x * (x * x))))) *
+        ↑sqrt (↑sqrt (↑sqrt (↑sqrt x * ↑sqrt (x * (x * x))))) *
+      ↑sqrt (↑sqrt (↑sqrt (↑sqrt x * ↑sqrt (x * (x * x))))) ≤
+    ↑sqrt y
+x y : ℝ≥0
+h : x * x ≤ y
+⊢ ↑sqrt x * ↑sqrt (x * x * x) ≤ y
+x y : ℝ≥0
+h : x * x ≤ y
+⊢ ↑sqrt (↑sqrt (↑sqrt x)) * ↑sqrt (↑sqrt (↑sqrt x) * ↑sqrt (↑sqrt (x * x))) *
+      (↑sqrt (↑sqrt (↑sqrt x)) * ↑sqrt (↑sqrt (↑sqrt x) * ↑sqrt (↑sqrt (x * x)))) ≤
+    ↑sqrt y
+x y : ℝ≥0
+h : x * x ≤ y
+⊢ ↑sqrt (↑sqrt (↑sqrt x)) * ↑sqrt (↑sqrt (↑sqrt x * ↑sqrt (x * x))) *
+      (↑sqrt (↑sqrt (↑sqrt x)) * ↑sqrt (↑sqrt (↑sqrt x * ↑sqrt (x * x)))) ≤
+    ↑sqrt y
+x y : ℝ≥0
+h : x * x ≤ y
+⊢ ↑sqrt (↑sqrt (↑sqrt x)) * (↑sqrt (↑sqrt (↑sqrt x)) * ↑sqrt (↑sqrt (↑sqrt (x * x)))) *
+      (↑sqrt (↑sqrt (↑sqrt x)) * (↑sqrt (↑sqrt (↑sqrt x)) * ↑sqrt (↑sqrt (↑sqrt (x * x))))) ≤
+    ↑sqrt y
+x y : ℝ≥0
+h : x * x ≤ y
+⊢ ↑sqrt (↑sqrt (↑sqrt x)) * ↑sqrt (↑sqrt (↑sqrt (x * (x * x)))) * ↑sqrt (↑sqrt (↑sqrt x)) *
+      ↑sqrt (↑sqrt (↑sqrt (x * (x * x)))) ≤
+    ↑sqrt y
+x y : ℝ≥0
+h : x * x ≤ y
+⊢ ↑sqrt (↑sqrt (↑sqrt x)) *
+      (↑sqrt (↑sqrt (↑sqrt (x * (x * x)))) * (↑sqrt (↑sqrt (↑sqrt x)) * ↑sqrt (↑sqrt (↑sqrt (x * (x * x)))))) ≤
+    ↑sqrt y
+x y : ℝ≥0
+h : x * x ≤ y
+⊢ ↑sqrt (↑sqrt (↑sqrt x * ↑sqrt (x * (x * x))) * ↑sqrt (↑sqrt x * ↑sqrt (x * (x * x)))) ≤ ↑sqrt y
+x y : ℝ≥0
+h : x * x ≤ y
+⊢ ↑sqrt (↑sqrt (↑sqrt x) * ↑sqrt (↑sqrt (x * (x * x))) * (↑sqrt (↑sqrt x) * ↑sqrt (↑sqrt (x * (x * x))))) ≤ ↑sqrt y
+x y : ℝ≥0
+h : x * x ≤ y
+⊢ ↑sqrt (↑sqrt (↑sqrt x) * ↑sqrt (↑sqrt (x * x * x))) * ↑sqrt (↑sqrt (↑sqrt x) * ↑sqrt (↑sqrt (x * x * x))) ≤ ↑sqrt y
+x y : ℝ≥0
+h : x * x ≤ y
+⊢ ↑sqrt
+      (↑sqrt (↑sqrt (↑sqrt x * ↑sqrt (x * (x * x))) * ↑sqrt (↑sqrt x * ↑sqrt (x * (x * x)))) *
+        ↑sqrt (↑sqrt (↑sqrt x * ↑sqrt (x * (x * x))) * ↑sqrt (↑sqrt x * ↑sqrt (x * (x * x))))) ≤
+    ↑sqrt y
+x y : ℝ≥0
+h : x * x ≤ y
+⊢ ↑sqrt
+      (↑sqrt (↑sqrt (↑sqrt x * ↑sqrt (x * (x * x)))) * ↑sqrt (↑sqrt (↑sqrt x * ↑sqrt (x * (x * x)))) *
+        (↑sqrt (↑sqrt (↑sqrt x * ↑sqrt (x * (x * x)))) * ↑sqrt (↑sqrt (↑sqrt x * ↑sqrt (x * (x * x)))))) ≤
+    ↑sqrt y
+x y : ℝ≥0
+h : x * x ≤ y
+⊢ ↑sqrt
+      (↑sqrt
+        (↑sqrt (↑sqrt (x * (x * (x * x))) * ↑sqrt (x * (x * (x * x)))) *
+          ↑sqrt (↑sqrt (x * (x * (x * x))) * ↑sqrt (x * (x * (x * x)))))) ≤
+    ↑sqrt y
+x y : ℝ≥0
+h : x * x ≤ y
+⊢ ↑sqrt
+      (↑sqrt
+        (↑sqrt (↑sqrt (x * (x * (x * x)))) * ↑sqrt (↑sqrt (x * (x * (x * x)))) *
+          (↑sqrt (↑sqrt (x * (x * (x * x)))) * ↑sqrt (↑sqrt (x * (x * (x * x))))))) ≤
+    ↑sqrt y
+x y : ℝ≥0
+h : x * x ≤ y
+⊢ ↑sqrt (↑sqrt x) * ↑sqrt (↑sqrt (x * (x * x))) ≤ ↑sqrt y
+x y : ℝ≥0
+h : x * x ≤ y
+⊢ ↑sqrt (↑sqrt (↑sqrt x)) * ↑sqrt (↑sqrt (↑sqrt x) * ↑sqrt (↑sqrt (x * x))) * ↑sqrt (↑sqrt (↑sqrt x)) *
+      ↑sqrt (↑sqrt (↑sqrt x) * ↑sqrt (↑sqrt (x * x))) ≤
+    ↑sqrt y
+x y : ℝ≥0
+h : x * x ≤ y
+⊢ ↑sqrt (↑sqrt (↑sqrt x)) * (↑sqrt (↑sqrt (↑sqrt x)) * ↑sqrt (↑sqrt (↑sqrt x) * ↑sqrt (↑sqrt x))) *
+      (↑sqrt (↑sqrt (↑sqrt x)) * (↑sqrt (↑sqrt (↑sqrt x)) * ↑sqrt (↑sqrt (↑sqrt x) * ↑sqrt (↑sqrt x)))) ≤
+    ↑sqrt y
+x y : ℝ≥0
+h : x * x ≤ y
+⊢ ↑sqrt (↑sqrt (↑sqrt x)) *
+      (↑sqrt (↑sqrt (↑sqrt x) * ↑sqrt (↑sqrt (x * x))) *
+        (↑sqrt (↑sqrt (↑sqrt x)) * ↑sqrt (↑sqrt (↑sqrt x) * ↑sqrt (↑sqrt (x * x))))) ≤
+    ↑sqrt y
+x y : ℝ≥0
+h : x * x ≤ y
+⊢ ↑sqrt (↑sqrt (↑sqrt x)) * (↑sqrt (↑sqrt (↑sqrt x)) * ↑sqrt (↑sqrt (↑sqrt x * ↑sqrt x))) *
+      (↑sqrt (↑sqrt (↑sqrt x)) * (↑sqrt (↑sqrt (↑sqrt x)) * ↑sqrt (↑sqrt (↑sqrt x * ↑sqrt x)))) ≤
+    ↑sqrt y
+x y : ℝ≥0
+h : x * x ≤ y
+⊢ ↑sqrt (↑sqrt (↑sqrt x) * (↑sqrt (↑sqrt x) * ↑sqrt (↑sqrt (x * x)))) *
+      ↑sqrt (↑sqrt (↑sqrt x) * (↑sqrt (↑sqrt x) * ↑sqrt (↑sqrt (x * x)))) ≤
+    ↑sqrt y
+x y : ℝ≥0
+h : x * x ≤ y
+⊢ ↑sqrt (↑sqrt (↑sqrt x)) * (↑sqrt (↑sqrt (↑sqrt x)) * ↑sqrt (↑sqrt (↑sqrt (x * x)))) * ↑sqrt (↑sqrt (↑sqrt x)) *
+      (↑sqrt (↑sqrt (↑sqrt x)) * ↑sqrt (↑sqrt (↑sqrt (x * x)))) ≤
+    ↑sqrt y
+x y : ℝ≥0
+h : x * x ≤ y
+⊢ ↑sqrt (↑sqrt (↑sqrt x)) *
+      (↑sqrt (↑sqrt (↑sqrt x)) * ↑sqrt (↑sqrt (↑sqrt (x * x))) *
+        (↑sqrt (↑sqrt (↑sqrt x)) * (↑sqrt (↑sqrt (↑sqrt x)) * ↑sqrt (↑sqrt (↑sqrt (x * x)))))) ≤
+    ↑sqrt y
+x y : ℝ≥0
+h : x * x ≤ y
+⊢ ↑sqrt (↑sqrt (↑sqrt x)) * ↑sqrt (↑sqrt (↑sqrt (x * x)) * ↑sqrt (↑sqrt x)) *
+      (↑sqrt (↑sqrt (↑sqrt x)) * ↑sqrt (↑sqrt (↑sqrt (x * x)) * ↑sqrt (↑sqrt x))) ≤
+    ↑sqrt y
+x y : ℝ≥0
+h : x * x ≤ y
+⊢ ↑sqrt (↑sqrt (↑sqrt x)) * ↑sqrt (↑sqrt (↑sqrt (x * x) * ↑sqrt x)) *
+      (↑sqrt (↑sqrt (↑sqrt x)) * ↑sqrt (↑sqrt (↑sqrt (x * x) * ↑sqrt x))) ≤
+    ↑sqrt y
+x y : ℝ≥0
+h : x * x ≤ y
+⊢ ↑sqrt (↑sqrt (↑sqrt x) * ↑sqrt (↑sqrt (x * x * x)) * (↑sqrt (↑sqrt x) * ↑sqrt (↑sqrt (x * x * x)))) ≤ ↑sqrt y
+x y : ℝ≥0
+h : x * x ≤ y
+⊢ ↑sqrt (↑sqrt (↑sqrt x)) * ↑sqrt (↑sqrt (↑sqrt (x * x * x))) *
+      (↑sqrt (↑sqrt (↑sqrt x)) * ↑sqrt (↑sqrt (↑sqrt (x * x * x)))) ≤
+    ↑sqrt y
+x y : ℝ≥0
+h : x * x ≤ y
+⊢ ↑sqrt (↑sqrt (↑sqrt x)) * ↑sqrt (↑sqrt (↑sqrt x) * ↑sqrt x) *
+      (↑sqrt (↑sqrt (↑sqrt x)) * ↑sqrt (↑sqrt (↑sqrt x) * ↑sqrt x)) ≤
+    ↑sqrt y
+x y : ℝ≥0
+h : x * x ≤ y
+⊢ ↑sqrt (↑sqrt (↑sqrt x)) *
+      (↑sqrt (↑sqrt (↑sqrt x)) *
+        (↑sqrt (↑sqrt (↑sqrt (x * x))) *
+          (↑sqrt (↑sqrt (↑sqrt x)) * (↑sqrt (↑sqrt (↑sqrt x)) * ↑sqrt (↑sqrt (↑sqrt (x * x))))))) ≤
+    ↑sqrt y
+x y : ℝ≥0
+h : x * x ≤ y
+⊢ ↑sqrt (↑sqrt (↑sqrt x)) * (↑sqrt (↑sqrt (↑sqrt x)) * ↑sqrt (↑sqrt x)) *
+      (↑sqrt (↑sqrt (↑sqrt x)) * (↑sqrt (↑sqrt (↑sqrt x)) * ↑sqrt (↑sqrt x))) ≤
+    ↑sqrt y
+x y : ℝ≥0
+h : x * x ≤ y
+⊢ ↑sqrt (↑sqrt x * ↑sqrt (x * (x * x))) ≤ ↑sqrt y
+x y : ℝ≥0
+h : x * x ≤ y
+⊢ ↑sqrt (↑sqrt x) * ↑sqrt (↑sqrt x * ↑sqrt (x * x)) ≤ ↑sqrt y
+x y : ℝ≥0
+h : x * x ≤ y
+⊢ ↑sqrt (↑sqrt x) * (↑sqrt (↑sqrt x) * ↑sqrt (↑sqrt (x * x))) ≤ ↑sqrt y
+x y : ℝ≥0
+h : x * x ≤ y
+⊢ ↑sqrt (↑sqrt (↑sqrt x)) * (↑sqrt (↑sqrt (↑sqrt x)) * (↑sqrt (↑sqrt (↑sqrt x)) * ↑sqrt (↑sqrt (↑sqrt x)))) *
+        ↑sqrt (↑sqrt (↑sqrt x)) *
+      (↑sqrt (↑sqrt (↑sqrt x)) * (↑sqrt (↑sqrt (↑sqrt x)) * ↑sqrt (↑sqrt (↑sqrt x)))) ≤
+    ↑sqrt y
+x y : ℝ≥0
+h : x * x ≤ y
+⊢ ↑sqrt (↑sqrt (↑sqrt x)) * (↑sqrt (↑sqrt (↑sqrt x)) * ↑sqrt (↑sqrt (↑sqrt x) * ↑sqrt (↑sqrt x))) *
+        ↑sqrt (↑sqrt (↑sqrt x)) *
+      (↑sqrt (↑sqrt (↑sqrt x)) * ↑sqrt (↑sqrt (↑sqrt x) * ↑sqrt (↑sqrt x))) ≤
+    ↑sqrt y
+x y : ℝ≥0
+h : x * x ≤ y
+⊢ ↑sqrt (↑sqrt (↑sqrt x)) *
+      (↑sqrt (↑sqrt (↑sqrt x)) * ↑sqrt (↑sqrt (↑sqrt x) * ↑sqrt (↑sqrt x)) *
+        (↑sqrt (↑sqrt (↑sqrt x)) * (↑sqrt (↑sqrt (↑sqrt x)) * ↑sqrt (↑sqrt (↑sqrt x) * ↑sqrt (↑sqrt x))))) ≤
+    ↑sqrt y
+x y : ℝ≥0
+h : x * x ≤ y
+⊢ ↑sqrt (↑sqrt (↑sqrt x)) * (↑sqrt (↑sqrt (↑sqrt x)) * ↑sqrt (↑sqrt (↑sqrt x) * ↑sqrt (↑sqrt x))) *
+          ↑sqrt (↑sqrt (↑sqrt x)) *
+        ↑sqrt (↑sqrt (↑sqrt x)) *
+      ↑sqrt (↑sqrt (↑sqrt x) * ↑sqrt (↑sqrt x)) ≤
+    ↑sqrt y
+x y : ℝ≥0
+h : x * x ≤ y
+⊢ ↑sqrt (↑sqrt (↑sqrt x)) *
+      (↑sqrt (↑sqrt (↑sqrt x)) *
+        (↑sqrt (↑sqrt (↑sqrt x) * ↑sqrt (↑sqrt x)) *
+          (↑sqrt (↑sqrt (↑sqrt x)) * (↑sqrt (↑sqrt (↑sqrt x)) * ↑sqrt (↑sqrt (↑sqrt x) * ↑sqrt (↑sqrt x)))))) ≤
+    ↑sqrt y
+x y : ℝ≥0
+h : x * x ≤ y
+⊢ ↑sqrt (↑sqrt (↑sqrt x)) * ↑sqrt (↑sqrt (↑sqrt x) * (↑sqrt (↑sqrt x) * ↑sqrt (↑sqrt x))) *
+      (↑sqrt (↑sqrt (↑sqrt x)) * ↑sqrt (↑sqrt (↑sqrt x) * (↑sqrt (↑sqrt x) * ↑sqrt (↑sqrt x)))) ≤
+    ↑sqrt y
+x y : ℝ≥0
+h : x * x ≤ y
+⊢ ↑sqrt (↑sqrt (↑sqrt x)) * (↑sqrt (↑sqrt (↑sqrt x)) * ↑sqrt (↑sqrt (↑sqrt x * ↑sqrt x))) * ↑sqrt (↑sqrt (↑sqrt x)) *
+      (↑sqrt (↑sqrt (↑sqrt x)) * ↑sqrt (↑sqrt (↑sqrt x * ↑sqrt x))) ≤
+    ↑sqrt y
+x y : ℝ≥0
+h : x * x ≤ y
+⊢ ↑sqrt (↑sqrt (↑sqrt x)) *
+      (↑sqrt (↑sqrt (↑sqrt x)) * ↑sqrt (↑sqrt (↑sqrt x * ↑sqrt x)) *
+        (↑sqrt (↑sqrt (↑sqrt x)) * (↑sqrt (↑sqrt (↑sqrt x)) * ↑sqrt (↑sqrt (↑sqrt x * ↑sqrt x))))) ≤
+    ↑sqrt y
+x y : ℝ≥0
+h : x * x ≤ y
+⊢ ↑sqrt (↑sqrt (↑sqrt x)) *
+      (↑sqrt (↑sqrt (↑sqrt x)) *
+        (↑sqrt (↑sqrt (↑sqrt x * ↑sqrt x)) *
+          (↑sqrt (↑sqrt (↑sqrt x)) * (↑sqrt (↑sqrt (↑sqrt x)) * ↑sqrt (↑sqrt (↑sqrt x * ↑sqrt x)))))) ≤
+    ↑sqrt y
+x y : ℝ≥0
+h : x * x ≤ y
+⊢ ↑sqrt (↑sqrt (↑sqrt x)) * ↑sqrt (↑sqrt (↑sqrt x) * ↑sqrt (↑sqrt x * ↑sqrt x)) *
+      (↑sqrt (↑sqrt (↑sqrt x)) * ↑sqrt (↑sqrt (↑sqrt x) * ↑sqrt (↑sqrt x * ↑sqrt x))) ≤
+    ↑sqrt y
+x y : ℝ≥0
+h : x * x ≤ y
+⊢ ↑sqrt (↑sqrt (↑sqrt x)) * (↑sqrt (↑sqrt (↑sqrt x)) * (↑sqrt (↑sqrt (↑sqrt x)) * ↑sqrt (↑sqrt (↑sqrt x)))) *
+      (↑sqrt (↑sqrt (↑sqrt x)) * (↑sqrt (↑sqrt (↑sqrt x)) * (↑sqrt (↑sqrt (↑sqrt x)) * ↑sqrt (↑sqrt (↑sqrt x))))) ≤
+    ↑sqrt y
+x y : ℝ≥0
+h : x * x ≤ y
+⊢ ↑sqrt (↑sqrt (↑sqrt x) * ↑sqrt (↑sqrt x) * ↑sqrt (↑sqrt (x * x))) *
+      ↑sqrt (↑sqrt (↑sqrt x) * ↑sqrt (↑sqrt x) * ↑sqrt (↑sqrt (x * x))) ≤
+    ↑sqrt y
+x y : ℝ≥0
+h : x * x ≤ y
+⊢ ↑sqrt
+      (↑sqrt (↑sqrt x) * (↑sqrt (↑sqrt x) * ↑sqrt (↑sqrt (x * x))) *
+        (↑sqrt (↑sqrt x) * (↑sqrt (↑sqrt x) * ↑sqrt (↑sqrt (x * x))))) ≤
+    ↑sqrt y
+x y : ℝ≥0
+h : x * x ≤ y
+⊢ ↑sqrt (↑sqrt (↑sqrt x)) * ↑sqrt (↑sqrt (↑sqrt x) * ↑sqrt x) * ↑sqrt (↑sqrt (↑sqrt x)) *
+      ↑sqrt (↑sqrt (↑sqrt x) * ↑sqrt x) ≤
+    ↑sqrt y
+x y : ℝ≥0
+h : x * x ≤ y
+⊢ ↑sqrt (↑sqrt (↑sqrt x)) *
+      (↑sqrt (↑sqrt (↑sqrt x) * ↑sqrt x) * (↑sqrt (↑sqrt (↑sqrt x)) * ↑sqrt (↑sqrt (↑sqrt x) * ↑sqrt x))) ≤
+    ↑sqrt y
+x y : ℝ≥0
+h : x * x ≤ y
+⊢ ↑sqrt (↑sqrt (↑sqrt x) * (↑sqrt (↑sqrt x) * ↑sqrt x)) * ↑sqrt (↑sqrt (↑sqrt x) * (↑sqrt (↑sqrt x) * ↑sqrt x)) ≤
+    ↑sqrt y
+x y : ℝ≥0
+h : x * x ≤ y
+⊢ ↑sqrt
+        (↑sqrt (↑sqrt (↑sqrt (x ^ 2))) *
+          (↑sqrt (↑sqrt (↑sqrt (x ^ 2))) * ↑sqrt (↑sqrt (↑sqrt (x ^ 2) * ↑sqrt (x ^ 2))))) *
+      ↑sqrt
+        (↑sqrt (↑sqrt (↑sqrt (x ^ 2))) *
+          (↑sqrt (↑sqrt (↑sqrt (x ^ 2))) * ↑sqrt (↑sqrt (↑sqrt (x ^ 2) * ↑sqrt (x ^ 2))))) ≤
+    ↑sqrt y
+x y : ℝ≥0
+h : x * x ≤ y
+⊢ ↑sqrt (↑sqrt (↑sqrt x) * (↑sqrt (↑sqrt x) * ↑sqrt (↑sqrt (x * x)))) * ↑sqrt (↑sqrt (↑sqrt x)) *
+      ↑sqrt (↑sqrt (↑sqrt x) * ↑sqrt (↑sqrt (x * x))) ≤
+    ↑sqrt y
+x y : ℝ≥0
+h : x * x ≤ y
+⊢ ↑sqrt (↑sqrt (↑sqrt x)) * (↑sqrt (↑sqrt (↑sqrt x)) * ↑sqrt (↑sqrt (↑sqrt (x * x)))) * ↑sqrt (↑sqrt (↑sqrt x)) *
+        ↑sqrt (↑sqrt (↑sqrt x)) *
+      ↑sqrt (↑sqrt (↑sqrt (x * x))) ≤
+    ↑sqrt y
+x y : ℝ≥0
+h : x * x ≤ y
+⊢ ↑sqrt (↑sqrt (↑sqrt x)) * ↑sqrt (↑sqrt (↑sqrt x)) * ↑sqrt (↑sqrt (↑sqrt (x * x))) * ↑sqrt (↑sqrt (↑sqrt x)) *
+        ↑sqrt (↑sqrt (↑sqrt x)) *
+      ↑sqrt (↑sqrt (↑sqrt (x * x))) ≤
+    ↑sqrt y
+x y : ℝ≥0
+h : x * x ≤ y
+⊢ ↑sqrt (↑sqrt (↑sqrt x)) * ↑sqrt (↑sqrt (↑sqrt x)) *
+      (↑sqrt (↑sqrt (↑sqrt (x * x))) *
+        (↑sqrt (↑sqrt (↑sqrt x)) * (↑sqrt (↑sqrt (↑sqrt x)) * ↑sqrt (↑sqrt (↑sqrt (x * x)))))) ≤
+    ↑sqrt y
+x y : ℝ≥0
+h : x * x ≤ y
+⊢ ↑sqrt (↑sqrt (↑sqrt x)) * (↑sqrt (↑sqrt (↑sqrt x)) * ↑sqrt (↑sqrt x)) * ↑sqrt (↑sqrt (↑sqrt x)) *
+      (↑sqrt (↑sqrt (↑sqrt x)) * ↑sqrt (↑sqrt x)) ≤
+    ↑sqrt y
+x y : ℝ≥0
+h : x * x ≤ y
+⊢ ↑sqrt (↑sqrt (↑sqrt x)) *
+      (↑sqrt (↑sqrt (↑sqrt x)) *
+        (↑sqrt (↑sqrt (↑sqrt (x * x))) * (↑sqrt (↑sqrt (↑sqrt x)) * ↑sqrt (↑sqrt (↑sqrt x) * ↑sqrt (↑sqrt (x * x)))))) ≤
+    ↑sqrt y
+x y : ℝ≥0
+h : x * x ≤ y
+⊢ ↑sqrt (↑sqrt (↑sqrt x)) *
+      (↑sqrt (↑sqrt (↑sqrt x)) * ↑sqrt (↑sqrt x) *
+        (↑sqrt (↑sqrt (↑sqrt x)) * (↑sqrt (↑sqrt (↑sqrt x)) * ↑sqrt (↑sqrt x)))) ≤
+    ↑sqrt y
+x y : ℝ≥0
+h : x * x ≤ y
+⊢ ↑sqrt (↑sqrt x) * (↑sqrt (↑sqrt x) * ↑sqrt x) ≤ ↑sqrt y
+x y : ℝ≥0
+h : x * x ≤ y
+⊢ ↑sqrt (↑sqrt (↑sqrt (↑sqrt (x ^ 2)))) * ↑sqrt (↑sqrt (↑sqrt (↑sqrt (x ^ 2))) * ↑sqrt (↑sqrt (x ^ 2))) *
+      (↑sqrt (↑sqrt (↑sqrt (↑sqrt (x ^ 2)))) * ↑sqrt (↑sqrt (↑sqrt (↑sqrt (x ^ 2))) * ↑sqrt (↑sqrt (x ^ 2)))) ≤
+    ↑sqrt y
+x y : ℝ≥0
+h : x * x ≤ y
+⊢ ↑sqrt (↑sqrt x) * ↑sqrt (↑sqrt (x * x * x)) ≤ ↑sqrt y
+x y : ℝ≥0
+h : x * x ≤ y
+⊢ ↑sqrt (↑sqrt (↑sqrt x)) * ↑sqrt (↑sqrt (↑sqrt x) * (↑sqrt (↑sqrt x) * ↑sqrt (↑sqrt x))) * ↑sqrt (↑sqrt (↑sqrt x)) *
+      ↑sqrt (↑sqrt (↑sqrt x) * (↑sqrt (↑sqrt x) * ↑sqrt (↑sqrt x))) ≤
+    ↑sqrt y
+x y : ℝ≥0
+h : x * x ≤ y
+⊢ ↑sqrt (↑sqrt (↑sqrt x)) *
+      (↑sqrt (↑sqrt (↑sqrt x) * (↑sqrt (↑sqrt x) * ↑sqrt (↑sqrt x))) *
+        (↑sqrt (↑sqrt (↑sqrt x)) * ↑sqrt (↑sqrt (↑sqrt x) * (↑sqrt (↑sqrt x) * ↑sqrt (↑sqrt x))))) ≤
+    ↑sqrt y
+x y : ℝ≥0
+h : x * x ≤ y
+⊢ ↑sqrt (↑sqrt (↑sqrt x)) * ↑sqrt (↑sqrt (↑sqrt x)) * ↑sqrt (↑sqrt (↑sqrt x) * ↑sqrt (↑sqrt x)) *
+          ↑sqrt (↑sqrt (↑sqrt x)) *
+        ↑sqrt (↑sqrt (↑sqrt x)) *
+      ↑sqrt (↑sqrt (↑sqrt x) * ↑sqrt (↑sqrt x)) ≤
+    ↑sqrt y
+x y : ℝ≥0
+h : x * x ≤ y
+⊢ ↑sqrt (↑sqrt (↑sqrt x)) * ↑sqrt (↑sqrt (↑sqrt x)) *
+      (↑sqrt (↑sqrt (↑sqrt x) * ↑sqrt (↑sqrt x)) *
+        (↑sqrt (↑sqrt (↑sqrt x)) * (↑sqrt (↑sqrt (↑sqrt x)) * ↑sqrt (↑sqrt (↑sqrt x) * ↑sqrt (↑sqrt x))))) ≤
+    ↑sqrt y
+x y : ℝ≥0
+h : x * x ≤ y
+⊢ ↑sqrt (↑sqrt (↑sqrt x) * (↑sqrt (↑sqrt x) * (↑sqrt (↑sqrt x) * ↑sqrt (↑sqrt x)))) *
+      ↑sqrt (↑sqrt (↑sqrt x) * (↑sqrt (↑sqrt x) * (↑sqrt (↑sqrt x) * ↑sqrt (↑sqrt x)))) ≤
+    ↑sqrt y
+x y : ℝ≥0
+h : x * x ≤ y
+⊢ ↑sqrt (↑sqrt (↑sqrt x)) * ↑sqrt (↑sqrt (↑sqrt x) * (↑sqrt (↑sqrt x) * ↑sqrt (↑sqrt x))) * ↑sqrt (↑sqrt (↑sqrt x)) *
+        ↑sqrt (↑sqrt (↑sqrt x)) *
+      ↑sqrt (↑sqrt (↑sqrt x) * ↑sqrt (↑sqrt x)) ≤
+    ↑sqrt y
+x y : ℝ≥0
+h : x * x ≤ y
+⊢ ↑sqrt (↑sqrt (↑sqrt x)) * ↑sqrt (↑sqrt (↑sqrt x) * ↑sqrt (↑sqrt x * ↑sqrt x)) * ↑sqrt (↑sqrt (↑sqrt x)) *
+      ↑sqrt (↑sqrt (↑sqrt x) * ↑sqrt (↑sqrt x * ↑sqrt x)) ≤
+    ↑sqrt y
+x y : ℝ≥0
+h : x * x ≤ y
+⊢ ↑sqrt (↑sqrt (↑sqrt x)) * (↑sqrt (↑sqrt (↑sqrt x)) * ↑sqrt (↑sqrt (↑sqrt x * ↑sqrt x))) * ↑sqrt (↑sqrt (↑sqrt x)) *
+        ↑sqrt (↑sqrt (↑sqrt x)) *
+      ↑sqrt (↑sqrt (↑sqrt x * ↑sqrt x)) ≤
+    ↑sqrt y
+x y : ℝ≥0
+h : x * x ≤ y
+⊢ ↑sqrt (↑sqrt (↑sqrt x)) * ↑sqrt (↑sqrt (↑sqrt x)) * ↑sqrt (↑sqrt (↑sqrt x * ↑sqrt x)) * ↑sqrt (↑sqrt (↑sqrt x)) *
+        ↑sqrt (↑sqrt (↑sqrt x)) *
+      ↑sqrt (↑sqrt (↑sqrt x * ↑sqrt x)) ≤
+    ↑sqrt y
+x y : ℝ≥0
+h : x * x ≤ y
+⊢ ↑sqrt (↑sqrt (↑sqrt x)) * ↑sqrt (↑sqrt (↑sqrt x)) *
+      (↑sqrt (↑sqrt (↑sqrt x * ↑sqrt x)) *
+        (↑sqrt (↑sqrt (↑sqrt x)) * (↑sqrt (↑sqrt (↑sqrt x)) * ↑sqrt (↑sqrt (↑sqrt x * ↑sqrt x))))) ≤
+    ↑sqrt y
+x y : ℝ≥0
+h : x * x ≤ y
+⊢ ↑sqrt (↑sqrt (↑sqrt x) * (↑sqrt (↑sqrt x) * ↑sqrt (↑sqrt x * ↑sqrt x))) * ↑sqrt (↑sqrt (↑sqrt x)) *
+      ↑sqrt (↑sqrt (↑sqrt x) * ↑sqrt (↑sqrt x * ↑sqrt x)) ≤
+    ↑sqrt y
+x y : ℝ≥0
+h : x * x ≤ y
+⊢ ↑sqrt (↑sqrt (↑sqrt x)) *
+      (↑sqrt (↑sqrt (↑sqrt x) * ↑sqrt (↑sqrt x * ↑sqrt x)) *
+        (↑sqrt (↑sqrt (↑sqrt x)) * ↑sqrt (↑sqrt (↑sqrt x) * ↑sqrt (↑sqrt x * ↑sqrt x)))) ≤
+    ↑sqrt y
+x y : ℝ≥0
+h : x * x ≤ y
+⊢ ↑sqrt (↑sqrt (↑sqrt x) * (↑sqrt (↑sqrt x) * ↑sqrt (↑sqrt x * ↑sqrt x))) *
+      ↑sqrt (↑sqrt (↑sqrt x) * (↑sqrt (↑sqrt x) * ↑sqrt (↑sqrt x * ↑sqrt x))) ≤
+    ↑sqrt y
+x y : ℝ≥0
+h : x * x ≤ y
+⊢ ↑sqrt (↑sqrt (↑sqrt x)) * ↑sqrt (↑sqrt (↑sqrt x)) * ↑sqrt (↑sqrt (↑sqrt x * ↑sqrt x)) *
+      (↑sqrt (↑sqrt (↑sqrt x)) * ↑sqrt (↑sqrt (↑sqrt x)) * ↑sqrt (↑sqrt (↑sqrt x * ↑sqrt x))) ≤
+    ↑sqrt y
+x y : ℝ≥0
+h : x * x ≤ y
+⊢ ↑sqrt (↑sqrt (↑sqrt x)) * ↑sqrt (↑sqrt (↑sqrt x)) * ↑sqrt (↑sqrt (↑sqrt (x * x))) *
+      (↑sqrt (↑sqrt (↑sqrt x)) * ↑sqrt (↑sqrt (↑sqrt x)) * ↑sqrt (↑sqrt (↑sqrt (x * x)))) ≤
+    ↑sqrt y
+x y : ℝ≥0
+h : x * x ≤ y
+⊢ ↑sqrt
+      (↑sqrt (↑sqrt x) * ↑sqrt (↑sqrt x) * ↑sqrt (↑sqrt (x * x)) *
+        (↑sqrt (↑sqrt x) * ↑sqrt (↑sqrt x) * ↑sqrt (↑sqrt (x * x)))) ≤
+    ↑sqrt y
+x y : ℝ≥0
+h : x * x ≤ y
+⊢ ↑sqrt
+      (↑sqrt (↑sqrt x) * (↑sqrt (↑sqrt x) * ↑sqrt (↑sqrt (x * x))) * ↑sqrt (↑sqrt x) *
+        (↑sqrt (↑sqrt x) * ↑sqrt (↑sqrt (x * x)))) ≤
+    ↑sqrt y
+x y : ℝ≥0
+h : x * x ≤ y
+⊢ ↑sqrt (↑sqrt (↑sqrt x) * ↑sqrt (↑sqrt x * ↑sqrt (x * x)) * (↑sqrt (↑sqrt x) * ↑sqrt (↑sqrt x * ↑sqrt (x * x)))) ≤
+    ↑sqrt y
+x y : ℝ≥0
+h : x * x ≤ y
+⊢ ↑sqrt
+        (↑sqrt (↑sqrt (↑sqrt (x ^ 2))) * ↑sqrt (↑sqrt (↑sqrt (x ^ 2))) *
+          ↑sqrt (↑sqrt (↑sqrt (x ^ 2) * ↑sqrt (x ^ 2)))) *
+      ↑sqrt
+        (↑sqrt (↑sqrt (↑sqrt (x ^ 2))) * ↑sqrt (↑sqrt (↑sqrt (x ^ 2))) *
+          ↑sqrt (↑sqrt (↑sqrt (x ^ 2) * ↑sqrt (x ^ 2)))) ≤
+    ↑sqrt y
+x y : ℝ≥0
+h : x * x ≤ y
+⊢ ↑sqrt
+      (↑sqrt (↑sqrt (↑sqrt (x ^ 2))) * (↑sqrt (↑sqrt (↑sqrt (x ^ 2))) * ↑sqrt (↑sqrt (↑sqrt (x ^ 2) * ↑sqrt (x ^ 2)))) *
+        (↑sqrt (↑sqrt (↑sqrt (x ^ 2))) *
+          (↑sqrt (↑sqrt (↑sqrt (x ^ 2))) * ↑sqrt (↑sqrt (↑sqrt (x ^ 2) * ↑sqrt (x ^ 2)))))) ≤
+    ↑sqrt y
+x y : ℝ≥0
+h : x * x ≤ y
+⊢ ↑sqrt
+      (↑sqrt (↑sqrt x) *
+        (↑sqrt (↑sqrt x) * ↑sqrt (↑sqrt (x * x)) * (↑sqrt (↑sqrt x) * (↑sqrt (↑sqrt x) * ↑sqrt (↑sqrt (x * x)))))) ≤
+    ↑sqrt y
+x y : ℝ≥0
+h : x * x ≤ y
+⊢ ↑sqrt (↑sqrt (↑sqrt x) * ↑sqrt (↑sqrt x) * ↑sqrt x) * ↑sqrt (↑sqrt (↑sqrt x) * ↑sqrt (↑sqrt x) * ↑sqrt x) ≤ ↑sqrt y
+x y : ℝ≥0
+h : x * x ≤ y
+⊢ ↑sqrt (↑sqrt (↑sqrt x) * ↑sqrt (↑sqrt x)) * ↑sqrt (↑sqrt (↑sqrt (x * x))) *
+      (↑sqrt (↑sqrt (↑sqrt x) * ↑sqrt (↑sqrt x)) * ↑sqrt (↑sqrt (↑sqrt (x * x)))) ≤
+    ↑sqrt y
+x y : ℝ≥0
+h : x * x ≤ y
+⊢ ↑sqrt (↑sqrt (↑sqrt x)) * (↑sqrt (↑sqrt (↑sqrt x)) * ↑sqrt (↑sqrt x)) * ↑sqrt (↑sqrt (↑sqrt x)) *
+        ↑sqrt (↑sqrt (↑sqrt x)) *
+      ↑sqrt (↑sqrt x) ≤
+    ↑sqrt y
+x y : ℝ≥0
+h : x * x ≤ y
+⊢ ↑sqrt (↑sqrt (↑sqrt x)) *
+      (↑sqrt (↑sqrt (↑sqrt x)) *
+        (↑sqrt (↑sqrt x) * (↑sqrt (↑sqrt (↑sqrt x)) * (↑sqrt (↑sqrt (↑sqrt x)) * ↑sqrt (↑sqrt x))))) ≤
+    ↑sqrt y
+x y : ℝ≥0
+h : x * x ≤ y
+⊢ ↑sqrt (↑sqrt (↑sqrt x)) *
+      (↑sqrt (↑sqrt (↑sqrt x)) * (↑sqrt (↑sqrt (↑sqrt x)) * ↑sqrt (↑sqrt (↑sqrt x))) *
+        (↑sqrt (↑sqrt (↑sqrt x)) * (↑sqrt (↑sqrt (↑sqrt x)) * (↑sqrt (↑sqrt (↑sqrt x)) * ↑sqrt (↑sqrt (↑sqrt x)))))) ≤
+    ↑sqrt y
+x y : ℝ≥0
+h : x * x ≤ y
+⊢ ↑sqrt (↑sqrt (↑sqrt x)) *
+      (↑sqrt (↑sqrt (↑sqrt x)) *
+        (↑sqrt (↑sqrt (↑sqrt x)) * ↑sqrt (↑sqrt (↑sqrt x)) *
+          (↑sqrt (↑sqrt (↑sqrt x)) *
+            (↑sqrt (↑sqrt (↑sqrt x)) * (↑sqrt (↑sqrt (↑sqrt x)) * ↑sqrt (↑sqrt (↑sqrt x))))))) ≤
+    ↑sqrt y
+x y : ℝ≥0
+h : x * x ≤ y
+⊢ ↑sqrt (↑sqrt (↑sqrt x)) *
+      (↑sqrt (↑sqrt (↑sqrt x)) *
+        (↑sqrt (↑sqrt (↑sqrt x)) *
+          (↑sqrt (↑sqrt (↑sqrt x)) *
+            (↑sqrt (↑sqrt (↑sqrt x)) *
+              (↑sqrt (↑sqrt (↑sqrt x)) * (↑sqrt (↑sqrt (↑sqrt x)) * ↑sqrt (↑sqrt (↑sqrt x)))))))) ≤
+    ↑sqrt y
+x y : ℝ≥0
+h : x * x ≤ y
+⊢ ↑sqrt (↑sqrt (↑sqrt x)) * ↑sqrt (↑sqrt (↑sqrt (x * x)) * ↑sqrt (↑sqrt x)) * ↑sqrt (↑sqrt (↑sqrt x)) *
+      ↑sqrt (↑sqrt (↑sqrt (x * x)) * ↑sqrt (↑sqrt x)) ≤
+    ↑sqrt y
+x y : ℝ≥0
+h : x * x ≤ y
+⊢ ↑sqrt (↑sqrt (↑sqrt x)) * (↑sqrt (↑sqrt (↑sqrt x) * ↑sqrt (↑sqrt x)) * ↑sqrt (↑sqrt (↑sqrt x))) *
+      (↑sqrt (↑sqrt (↑sqrt x)) * (↑sqrt (↑sqrt (↑sqrt x) * ↑sqrt (↑sqrt x)) * ↑sqrt (↑sqrt (↑sqrt x)))) ≤
+    ↑sqrt y
+x y : ℝ≥0
+h : x * x ≤ y
+⊢ ↑sqrt (↑sqrt (↑sqrt x)) *
+      (↑sqrt (↑sqrt (↑sqrt (x * x)) * ↑sqrt (↑sqrt x)) *
+        (↑sqrt (↑sqrt (↑sqrt x)) * ↑sqrt (↑sqrt (↑sqrt (x * x)) * ↑sqrt (↑sqrt x)))) ≤
+    ↑sqrt y
+x y : ℝ≥0
+h : x * x ≤ y
+⊢ ↑sqrt (↑sqrt (↑sqrt x)) * (↑sqrt (↑sqrt (↑sqrt x * ↑sqrt x)) * ↑sqrt (↑sqrt (↑sqrt x))) *
+      (↑sqrt (↑sqrt (↑sqrt x)) * (↑sqrt (↑sqrt (↑sqrt x * ↑sqrt x)) * ↑sqrt (↑sqrt (↑sqrt x)))) ≤
+    ↑sqrt y
+x y : ℝ≥0
+h : x * x ≤ y
+⊢ ↑sqrt (↑sqrt (↑sqrt x) * (↑sqrt (↑sqrt (x * x)) * ↑sqrt (↑sqrt x))) *
+      ↑sqrt (↑sqrt (↑sqrt x) * (↑sqrt (↑sqrt (x * x)) * ↑sqrt (↑sqrt x))) ≤
+    ↑sqrt y
+x y : ℝ≥0
+h : x * x ≤ y
+⊢ ↑sqrt (↑sqrt (↑sqrt x)) * ↑sqrt (↑sqrt (↑sqrt (x * x) * ↑sqrt x)) * ↑sqrt (↑sqrt (↑sqrt x)) *
+      ↑sqrt (↑sqrt (↑sqrt (x * x) * ↑sqrt x)) ≤
+    ↑sqrt y
+x y : ℝ≥0
+h : x * x ≤ y
+⊢ ↑sqrt (↑sqrt (↑sqrt x)) * ↑sqrt (↑sqrt (↑sqrt (x * x * x))) * ↑sqrt (↑sqrt (↑sqrt x)) *
+      ↑sqrt (↑sqrt (↑sqrt (x * x * x))) ≤
+    ↑sqrt y
+x y : ℝ≥0
+h : x * x ≤ y
+⊢ ↑sqrt (↑sqrt (↑sqrt x)) * (↑sqrt (↑sqrt (↑sqrt (x * x))) * ↑sqrt (↑sqrt (↑sqrt x))) *
+      (↑sqrt (↑sqrt (↑sqrt x)) * (↑sqrt (↑sqrt (↑sqrt (x * x))) * ↑sqrt (↑sqrt (↑sqrt x)))) ≤
+    ↑sqrt y
+x y : ℝ≥0
+h : x * x ≤ y
+⊢ ↑sqrt (↑sqrt (↑sqrt x)) *
+      (↑sqrt (↑sqrt (↑sqrt (x * x * x))) * (↑sqrt (↑sqrt (↑sqrt x)) * ↑sqrt (↑sqrt (↑sqrt (x * x * x))))) ≤
+    ↑sqrt y
+x y : ℝ≥0
+h : x * x ≤ y
+⊢ ↑sqrt (↑sqrt (↑sqrt x)) * ↑sqrt (↑sqrt x * ↑sqrt (↑sqrt x)) *
+      (↑sqrt (↑sqrt (↑sqrt x)) * ↑sqrt (↑sqrt x * ↑sqrt (↑sqrt x))) ≤
+    ↑sqrt y
+x y : ℝ≥0
+h : x * x ≤ y
+⊢ ↑sqrt (↑sqrt (↑sqrt (↑sqrt (x ^ 2)))) *
+        ↑sqrt (↑sqrt (↑sqrt (↑sqrt (x ^ 2) * ↑sqrt (x ^ 2))) * ↑sqrt (↑sqrt (↑sqrt (x ^ 2)))) *
+      (↑sqrt (↑sqrt (↑sqrt (↑sqrt (x ^ 2)))) *
+        ↑sqrt (↑sqrt (↑sqrt (↑sqrt (x ^ 2) * ↑sqrt (x ^ 2))) * ↑sqrt (↑sqrt (↑sqrt (x ^ 2))))) ≤
+    ↑sqrt y
+x y : ℝ≥0
+h : x * x ≤ y
+⊢ ↑sqrt (↑sqrt (↑sqrt x)) *
+      (↑sqrt (↑sqrt (↑sqrt (x * x) * ↑sqrt x)) * (↑sqrt (↑sqrt (↑sqrt x)) * ↑sqrt (↑sqrt (↑sqrt (x * x) * ↑sqrt x)))) ≤
+    ↑sqrt y
+x y : ℝ≥0
+h : x * x ≤ y
+⊢ ↑sqrt (↑sqrt (↑sqrt x) * ↑sqrt (↑sqrt (x * x) * ↑sqrt x)) *
+      ↑sqrt (↑sqrt (↑sqrt x) * ↑sqrt (↑sqrt (x * x) * ↑sqrt x)) ≤
+    ↑sqrt y
+x y : ℝ≥0
+h : x * x ≤ y
+⊢ ↑sqrt (↑sqrt (↑sqrt x)) * (↑sqrt (↑sqrt (↑sqrt x)) * ↑sqrt (↑sqrt (↑sqrt x)) * ↑sqrt (↑sqrt (↑sqrt x))) *
+        ↑sqrt (↑sqrt (↑sqrt x)) *
+      (↑sqrt (↑sqrt (↑sqrt x)) * ↑sqrt (↑sqrt (↑sqrt x)) * ↑sqrt (↑sqrt (↑sqrt x))) ≤
+    ↑sqrt y
+x y : ℝ≥0
+h : x * x ≤ y
+⊢ ↑sqrt (↑sqrt (↑sqrt x)) * (↑sqrt (↑sqrt (↑sqrt x) * ↑sqrt (↑sqrt x)) * ↑sqrt (↑sqrt (↑sqrt x))) *
+        ↑sqrt (↑sqrt (↑sqrt x)) *
+      (↑sqrt (↑sqrt (↑sqrt x) * ↑sqrt (↑sqrt x)) * ↑sqrt (↑sqrt (↑sqrt x))) ≤
+    ↑sqrt y
+x y : ℝ≥0
+h : x * x ≤ y
+⊢ ↑sqrt (↑sqrt (↑sqrt x)) *
+      (↑sqrt (↑sqrt (↑sqrt x) * ↑sqrt (↑sqrt x)) * ↑sqrt (↑sqrt (↑sqrt x)) *
+        (↑sqrt (↑sqrt (↑sqrt x)) * (↑sqrt (↑sqrt (↑sqrt x) * ↑sqrt (↑sqrt x)) * ↑sqrt (↑sqrt (↑sqrt x))))) ≤
+    ↑sqrt y
+x y : ℝ≥0
+h : x * x ≤ y
+⊢ ↑sqrt (↑sqrt (↑sqrt x)) *
+      (↑sqrt (↑sqrt (↑sqrt x) * ↑sqrt (↑sqrt x)) *
+        (↑sqrt (↑sqrt (↑sqrt x)) *
+          (↑sqrt (↑sqrt (↑sqrt x)) * (↑sqrt (↑sqrt (↑sqrt x) * ↑sqrt (↑sqrt x)) * ↑sqrt (↑sqrt (↑sqrt x)))))) ≤
+    ↑sqrt y
+x y : ℝ≥0
+h : x * x ≤ y
+⊢ ↑sqrt (↑sqrt (↑sqrt x)) * ↑sqrt (↑sqrt (↑sqrt x) * ↑sqrt (↑sqrt x) * ↑sqrt (↑sqrt x)) *
+      (↑sqrt (↑sqrt (↑sqrt x)) * ↑sqrt (↑sqrt (↑sqrt x) * ↑sqrt (↑sqrt x) * ↑sqrt (↑sqrt x))) ≤
+    ↑sqrt y
+x y : ℝ≥0
+h : x * x ≤ y
+⊢ ↑sqrt (↑sqrt (↑sqrt x)) * (↑sqrt (↑sqrt (↑sqrt x * ↑sqrt x)) * ↑sqrt (↑sqrt (↑sqrt x))) * ↑sqrt (↑sqrt (↑sqrt x)) *
+      (↑sqrt (↑sqrt (↑sqrt x * ↑sqrt x)) * ↑sqrt (↑sqrt (↑sqrt x))) ≤
+    ↑sqrt y
+x y : ℝ≥0
+h : x * x ≤ y
+⊢ ↑sqrt (↑sqrt (↑sqrt x)) *
+      (↑sqrt (↑sqrt (↑sqrt x * ↑sqrt x)) * ↑sqrt (↑sqrt (↑sqrt x)) *
+        (↑sqrt (↑sqrt (↑sqrt x)) * (↑sqrt (↑sqrt (↑sqrt x * ↑sqrt x)) * ↑sqrt (↑sqrt (↑sqrt x))))) ≤
+    ↑sqrt y
+x y : ℝ≥0
+h : x * x ≤ y
+⊢ ↑sqrt (↑sqrt (↑sqrt x)) *
+      (↑sqrt (↑sqrt (↑sqrt x * ↑sqrt x)) *
+        (↑sqrt (↑sqrt (↑sqrt x)) *
+          (↑sqrt (↑sqrt (↑sqrt x)) * (↑sqrt (↑sqrt (↑sqrt x * ↑sqrt x)) * ↑sqrt (↑sqrt (↑sqrt x)))))) ≤
+    ↑sqrt y
+x y : ℝ≥0
+h : x * x ≤ y
+⊢ ↑sqrt (↑sqrt (↑sqrt x)) * ↑sqrt (↑sqrt (↑sqrt x * ↑sqrt x) * ↑sqrt (↑sqrt x)) *
+      (↑sqrt (↑sqrt (↑sqrt x)) * ↑sqrt (↑sqrt (↑sqrt x * ↑sqrt x) * ↑sqrt (↑sqrt x))) ≤
+    ↑sqrt y
+x y : ℝ≥0
+h : x * x ≤ y
+⊢ ↑sqrt (↑sqrt (↑sqrt x)) * (↑sqrt (↑sqrt (↑sqrt x)) * ↑sqrt (↑sqrt (↑sqrt x)) * ↑sqrt (↑sqrt (↑sqrt x))) *
+      (↑sqrt (↑sqrt (↑sqrt x)) * (↑sqrt (↑sqrt (↑sqrt x)) * ↑sqrt (↑sqrt (↑sqrt x)) * ↑sqrt (↑sqrt (↑sqrt x)))) ≤
+    ↑sqrt y
+x y : ℝ≥0
+h : x * x ≤ y
+⊢ ↑sqrt (↑sqrt (↑sqrt (↑sqrt (x ^ 2)))) *
+          ↑sqrt (↑sqrt (↑sqrt (↑sqrt (x ^ 2) * ↑sqrt (x ^ 2))) * ↑sqrt (↑sqrt (↑sqrt (x ^ 2)))) *
+        ↑sqrt (↑sqrt (↑sqrt (↑sqrt (x ^ 2)))) *
+      ↑sqrt (↑sqrt (↑sqrt (↑sqrt (x ^ 2) * ↑sqrt (x ^ 2))) * ↑sqrt (↑sqrt (↑sqrt (x ^ 2)))) ≤
+    ↑sqrt y
+x y : ℝ≥0
+h : x * x ≤ y
+⊢ ↑sqrt (↑sqrt (↑sqrt x)) * ↑sqrt (↑sqrt (x * ↑sqrt x)) * (↑sqrt (↑sqrt (↑sqrt x)) * ↑sqrt (↑sqrt (x * ↑sqrt x))) ≤
+    ↑sqrt y
+x y : ℝ≥0
+h : x * x ≤ y
+⊢ ↑sqrt (↑sqrt (↑sqrt (↑sqrt (x ^ 2)))) *
+      (↑sqrt (↑sqrt (↑sqrt (↑sqrt (x ^ 2) * ↑sqrt (x ^ 2))) * ↑sqrt (↑sqrt (↑sqrt (x ^ 2)))) *
+        (↑sqrt (↑sqrt (↑sqrt (↑sqrt (x ^ 2)))) *
+          ↑sqrt (↑sqrt (↑sqrt (↑sqrt (x ^ 2) * ↑sqrt (x ^ 2))) * ↑sqrt (↑sqrt (↑sqrt (x ^ 2)))))) ≤
+    ↑sqrt y
+x y : ℝ≥0
+h : x * x ≤ y
+⊢ ↑sqrt
+        (↑sqrt (↑sqrt (↑sqrt (x ^ 2))) *
+          (↑sqrt (↑sqrt (↑sqrt (x ^ 2) * ↑sqrt (x ^ 2))) * ↑sqrt (↑sqrt (↑sqrt (x ^ 2))))) *
+      ↑sqrt
+        (↑sqrt (↑sqrt (↑sqrt (x ^ 2))) *
+          (↑sqrt (↑sqrt (↑sqrt (x ^ 2) * ↑sqrt (x ^ 2))) * ↑sqrt (↑sqrt (↑sqrt (x ^ 2))))) ≤
+    ↑sqrt y
+x y : ℝ≥0
+h : x * x ≤ y
+⊢ ↑sqrt (↑sqrt (↑sqrt x)) * (↑sqrt (↑sqrt x) * ↑sqrt (↑sqrt (↑sqrt x))) *
+      (↑sqrt (↑sqrt (↑sqrt x)) * (↑sqrt (↑sqrt x) * ↑sqrt (↑sqrt (↑sqrt x)))) ≤
+    ↑sqrt y
+x y : ℝ≥0
+h : x * x ≤ y
+⊢ ↑sqrt (↑sqrt (↑sqrt x) * (↑sqrt (↑sqrt (x * x)) * ↑sqrt (↑sqrt x))) * ↑sqrt (↑sqrt (↑sqrt x)) *
+      ↑sqrt (↑sqrt (↑sqrt (x * x)) * ↑sqrt (↑sqrt x)) ≤
+    ↑sqrt y
+x y : ℝ≥0
+h : x * x ≤ y
+⊢ ↑sqrt (↑sqrt (↑sqrt x)) * ↑sqrt (↑sqrt x * ↑sqrt (↑sqrt x)) * ↑sqrt (↑sqrt (↑sqrt x)) *
+      ↑sqrt (↑sqrt x * ↑sqrt (↑sqrt x)) ≤
+    ↑sqrt y
+x y : ℝ≥0
+h : x * x ≤ y
+⊢ ↑sqrt (↑sqrt (↑sqrt x)) *
+      (↑sqrt (↑sqrt x * ↑sqrt (↑sqrt x)) * (↑sqrt (↑sqrt (↑sqrt x)) * ↑sqrt (↑sqrt x * ↑sqrt (↑sqrt x)))) ≤
+    ↑sqrt y
+x y : ℝ≥0
+h : x * x ≤ y
+⊢ ↑sqrt (↑sqrt (↑sqrt x) * (↑sqrt x * ↑sqrt (↑sqrt x))) * ↑sqrt (↑sqrt (↑sqrt x) * (↑sqrt x * ↑sqrt (↑sqrt x))) ≤
+    ↑sqrt y
+x y : ℝ≥0
+h : x * x ≤ y
+⊢ ↑sqrt (↑sqrt (↑sqrt x)) * (↑sqrt (↑sqrt (↑sqrt x) * ↑sqrt (↑sqrt x)) * ↑sqrt (↑sqrt (↑sqrt x))) *
+          ↑sqrt (↑sqrt (↑sqrt x)) *
+        ↑sqrt (↑sqrt (↑sqrt x) * ↑sqrt (↑sqrt x)) *
+      ↑sqrt (↑sqrt (↑sqrt x)) ≤
+    ↑sqrt y
+x y : ℝ≥0
+h : x * x ≤ y
+⊢ ↑sqrt (↑sqrt (↑sqrt x)) * ↑sqrt (↑sqrt (↑sqrt x) * ↑sqrt (↑sqrt x) * ↑sqrt (↑sqrt x)) * ↑sqrt (↑sqrt (↑sqrt x)) *
+      ↑sqrt (↑sqrt (↑sqrt x) * ↑sqrt (↑sqrt x) * ↑sqrt (↑sqrt x)) ≤
+    ↑sqrt y
+x y : ℝ≥0
+h : x * x ≤ y
+⊢ ↑sqrt (↑sqrt (↑sqrt x)) * ↑sqrt (↑sqrt (↑sqrt x) * ↑sqrt (↑sqrt x)) *
+      (↑sqrt (↑sqrt (↑sqrt x)) *
+        (↑sqrt (↑sqrt (↑sqrt x)) * (↑sqrt (↑sqrt (↑sqrt x) * ↑sqrt (↑sqrt x)) * ↑sqrt (↑sqrt (↑sqrt x))))) ≤
+    ↑sqrt y
+x y : ℝ≥0
+h : x * x ≤ y
+⊢ ↑sqrt (↑sqrt (↑sqrt x)) *
+      (↑sqrt (↑sqrt (↑sqrt x)) * ↑sqrt (↑sqrt (↑sqrt x)) * ↑sqrt (↑sqrt (↑sqrt x)) *
+        (↑sqrt (↑sqrt (↑sqrt x)) * (↑sqrt (↑sqrt (↑sqrt x)) * ↑sqrt (↑sqrt (↑sqrt x)) * ↑sqrt (↑sqrt (↑sqrt x))))) ≤
+    ↑sqrt y
+x y : ℝ≥0
+h : x * x ≤ y
+⊢ ↑sqrt (↑sqrt (↑sqrt x)) *
+      (↑sqrt (↑sqrt (↑sqrt x)) * ↑sqrt (↑sqrt (↑sqrt x)) *
+        (↑sqrt (↑sqrt (↑sqrt x)) *
+          (↑sqrt (↑sqrt (↑sqrt x)) * (↑sqrt (↑sqrt (↑sqrt x)) * ↑sqrt (↑sqrt (↑sqrt x)) * ↑sqrt (↑sqrt (↑sqrt x)))))) ≤
+    ↑sqrt y
+x y : ℝ≥0
+h : x * x ≤ y
+⊢ ↑sqrt (↑sqrt (↑sqrt x)) *
+      (↑sqrt (↑sqrt (↑sqrt x) * ↑sqrt (↑sqrt x) * ↑sqrt (↑sqrt x)) *
+        (↑sqrt (↑sqrt (↑sqrt x)) * ↑sqrt (↑sqrt (↑sqrt x) * ↑sqrt (↑sqrt x) * ↑sqrt (↑sqrt x)))) ≤
+    ↑sqrt y
+x y : ℝ≥0
+h : x * x ≤ y
+⊢ ↑sqrt (↑sqrt (↑sqrt x) * (↑sqrt (↑sqrt x) * ↑sqrt (↑sqrt x) * ↑sqrt (↑sqrt x))) *
+      ↑sqrt (↑sqrt (↑sqrt x) * (↑sqrt (↑sqrt x) * ↑sqrt (↑sqrt x) * ↑sqrt (↑sqrt x))) ≤
+    ↑sqrt y
+x y : ℝ≥0
+h : x * x ≤ y
+⊢ ↑sqrt (↑sqrt (↑sqrt x)) * (↑sqrt (↑sqrt (↑sqrt (x * x))) * ↑sqrt (↑sqrt (↑sqrt x))) * ↑sqrt (↑sqrt (↑sqrt x)) *
+      (↑sqrt (↑sqrt (↑sqrt (x * x))) * ↑sqrt (↑sqrt (↑sqrt x))) ≤
+    ↑sqrt y
+x y : ℝ≥0
+h : x * x ≤ y
+⊢ ↑sqrt (↑sqrt (↑sqrt x)) * (↑sqrt (↑sqrt (↑sqrt x * ↑sqrt x)) * ↑sqrt (↑sqrt (↑sqrt x))) * ↑sqrt (↑sqrt (↑sqrt x)) *
+        ↑sqrt (↑sqrt (↑sqrt x * ↑sqrt x)) *
+      ↑sqrt (↑sqrt (↑sqrt x)) ≤
+    ↑sqrt y
+x y : ℝ≥0
+h : x * x ≤ y
+⊢ ↑sqrt (↑sqrt (↑sqrt x)) * (↑sqrt (↑sqrt x) * ↑sqrt (↑sqrt (↑sqrt x))) * ↑sqrt (↑sqrt (↑sqrt x)) *
+      (↑sqrt (↑sqrt x) * ↑sqrt (↑sqrt (↑sqrt x))) ≤
+    ↑sqrt y
+x y : ℝ≥0
+h : x * x ≤ y
+⊢ ↑sqrt (↑sqrt (↑sqrt x)) * ↑sqrt (↑sqrt (↑sqrt x * ↑sqrt x)) *
+      (↑sqrt (↑sqrt (↑sqrt x)) *
+        (↑sqrt (↑sqrt (↑sqrt x)) * (↑sqrt (↑sqrt (↑sqrt x * ↑sqrt x)) * ↑sqrt (↑sqrt (↑sqrt x))))) ≤
+    ↑sqrt y
+x y : ℝ≥0
+h : x * x ≤ y
+⊢ ↑sqrt (↑sqrt (↑sqrt x)) *
+      (↑sqrt (↑sqrt x) * ↑sqrt (↑sqrt (↑sqrt x)) *
+        (↑sqrt (↑sqrt (↑sqrt x)) * (↑sqrt (↑sqrt x) * ↑sqrt (↑sqrt (↑sqrt x))))) ≤
+    ↑sqrt y
+x y : ℝ≥0
+h : x * x ≤ y
+⊢ ↑sqrt (↑sqrt (↑sqrt x)) *
+      (↑sqrt (↑sqrt x) *
+        (↑sqrt (↑sqrt (↑sqrt x)) * (↑sqrt (↑sqrt (↑sqrt x)) * (↑sqrt (↑sqrt x) * ↑sqrt (↑sqrt (↑sqrt x)))))) ≤
+    ↑sqrt y
+x y : ℝ≥0
+h : x * x ≤ y
+⊢ ↑sqrt (↑sqrt (↑sqrt x)) *
+      (↑sqrt (↑sqrt (↑sqrt (x * x))) *
+        (↑sqrt (↑sqrt (↑sqrt x)) *
+          (↑sqrt (↑sqrt (↑sqrt x)) * (↑sqrt (↑sqrt (↑sqrt (x * x))) * ↑sqrt (↑sqrt (↑sqrt x)))))) ≤
+    ↑sqrt y
+x y : ℝ≥0
+h : x * x ≤ y
+⊢ (↑sqrt (↑sqrt (↑sqrt (↑sqrt (x ^ 2)))) *
+        ↑sqrt (↑sqrt (↑sqrt (↑sqrt (x ^ 2) * ↑sqrt (x ^ 2))) * ↑sqrt (↑sqrt (↑sqrt (x ^ 2))))) ^
+      2 ≤
+    ↑sqrt y
+x y : ℝ≥0
+h : x * x ≤ y
+⊢ ↑sqrt (↑sqrt (↑sqrt (↑sqrt (x * x)))) *
+        ↑sqrt (↑sqrt (↑sqrt (↑sqrt (x * x) * ↑sqrt (x * x))) * ↑sqrt (↑sqrt (↑sqrt (x * x)))) *
+      (↑sqrt (↑sqrt (↑sqrt (↑sqrt (x * x)))) *
+        ↑sqrt (↑sqrt (↑sqrt (↑sqrt (x * x) * ↑sqrt (x * x))) * ↑sqrt (↑sqrt (↑sqrt (x * x))))) ≤
+    ↑sqrt y
+x y : ℝ≥0
+h : x * x ≤ y
+⊢ ↑sqrt (↑sqrt (↑sqrt x)) * (↑sqrt (↑sqrt (↑sqrt x)) * ↑sqrt (↑sqrt (↑sqrt x)) * ↑sqrt (↑sqrt (↑sqrt x))) *
+          ↑sqrt (↑sqrt (↑sqrt x)) *
+        (↑sqrt (↑sqrt (↑sqrt x)) * ↑sqrt (↑sqrt (↑sqrt x))) *
+      ↑sqrt (↑sqrt (↑sqrt x)) ≤
+    ↑sqrt y
+x y : ℝ≥0
+h : x * x ≤ y
+⊢ ↑sqrt (↑sqrt (↑sqrt x)) * (↑sqrt (↑sqrt (↑sqrt (x * x))) * ↑sqrt (↑sqrt (↑sqrt x))) * ↑sqrt (↑sqrt (↑sqrt x)) *
+        ↑sqrt (↑sqrt (↑sqrt (x * x))) *
+      ↑sqrt (↑sqrt (↑sqrt x)) ≤
+    ↑sqrt y
+x y : ℝ≥0
+h : x * x ≤ y
+⊢ ↑sqrt (↑sqrt (↑sqrt x) * ↑sqrt (↑sqrt (x * x)) * ↑sqrt (↑sqrt x)) * ↑sqrt (↑sqrt (↑sqrt x)) *
+      ↑sqrt (↑sqrt (↑sqrt (x * x)) * ↑sqrt (↑sqrt x)) ≤
+    ↑sqrt y
+x y : ℝ≥0
+h : x * x ≤ y
+⊢ ↑sqrt (↑sqrt (↑sqrt x) * (↑sqrt x * ↑sqrt (↑sqrt x))) * ↑sqrt (↑sqrt (↑sqrt x)) * ↑sqrt (↑sqrt x * ↑sqrt (↑sqrt x)) ≤
+    ↑sqrt y
+x y : ℝ≥0
+h : x * x ≤ y
+⊢ ↑sqrt (↑sqrt (↑sqrt x) * (↑sqrt (↑sqrt (x * x)) * ↑sqrt (↑sqrt x))) *
+      (↑sqrt (↑sqrt (↑sqrt x)) * ↑sqrt (↑sqrt (↑sqrt (x * x)) * ↑sqrt (↑sqrt x))) ≤
+    ↑sqrt y
+x y : ℝ≥0
+h : x * x ≤ y
+⊢ ↑sqrt (↑sqrt (↑sqrt x) * (↑sqrt (↑sqrt (x * x)) * ↑sqrt (↑sqrt x)) * ↑sqrt (↑sqrt x)) *
+      ↑sqrt (↑sqrt (↑sqrt (x * x)) * ↑sqrt (↑sqrt x)) ≤
+    ↑sqrt y
+x y : ℝ≥0
+h : x * x ≤ y
+⊢ ↑sqrt (↑sqrt (↑sqrt x)) * (↑sqrt (↑sqrt (↑sqrt x)) ^ 2 * ↑sqrt (↑sqrt (↑sqrt x))) * ↑sqrt (↑sqrt (↑sqrt x)) *
+      (↑sqrt (↑sqrt (↑sqrt x)) ^ 2 * ↑sqrt (↑sqrt (↑sqrt x))) ≤
+    ↑sqrt y
+x y : ℝ≥0
+h : x * x ≤ y
+⊢ ↑sqrt
+        (↑sqrt (↑sqrt (↑sqrt (x ^ 2))) * ↑sqrt (↑sqrt (↑sqrt (x ^ 2) * ↑sqrt (x ^ 2))) *
+          ↑sqrt (↑sqrt (↑sqrt (x ^ 2)))) *
+      ↑sqrt
+        (↑sqrt (↑sqrt (↑sqrt (x ^ 2))) * ↑sqrt (↑sqrt (↑sqrt (x ^ 2) * ↑sqrt (x ^ 2))) *
+          ↑sqrt (↑sqrt (↑sqrt (x ^ 2)))) ≤
+    ↑sqrt y
+x y : ℝ≥0
+h : x * x ≤ y
+⊢ ↑sqrt
+      (↑sqrt (↑sqrt (↑sqrt (x ^ 2))) * (↑sqrt (↑sqrt (↑sqrt (x ^ 2) * ↑sqrt (x ^ 2))) * ↑sqrt (↑sqrt (↑sqrt (x ^ 2)))) *
+        (↑sqrt (↑sqrt (↑sqrt (x ^ 2))) *
+          (↑sqrt (↑sqrt (↑sqrt (x ^ 2) * ↑sqrt (x ^ 2))) * ↑sqrt (↑sqrt (↑sqrt (x ^ 2)))))) ≤
+    ↑sqrt y
+x y : ℝ≥0
+h : x * x ≤ y
+⊢ ↑sqrt (↑sqrt (↑sqrt (↑sqrt (x * x)))) *
+          ↑sqrt (↑sqrt (↑sqrt (↑sqrt (x * x) * ↑sqrt (x * x))) * ↑sqrt (↑sqrt (↑sqrt (x * x)))) *
+        ↑sqrt (↑sqrt (↑sqrt (↑sqrt (x * x)))) *
+      ↑sqrt (↑sqrt (↑sqrt (↑sqrt (x * x) * ↑sqrt (x * x))) * ↑sqrt (↑sqrt (↑sqrt (x * x)))) ≤
+    ↑sqrt y
+x y : ℝ≥0
+h : x * x ≤ y
+⊢ ↑sqrt (↑sqrt (↑sqrt (↑sqrt (x * x)))) *
+      (↑sqrt (↑sqrt (↑sqrt (↑sqrt (x * x) * ↑sqrt (x * x))) * ↑sqrt (↑sqrt (↑sqrt (x * x)))) *
+        (↑sqrt (↑sqrt (↑sqrt (↑sqrt (x * x)))) *
+          ↑sqrt (↑sqrt (↑sqrt (↑sqrt (x * x) * ↑sqrt (x * x))) * ↑sqrt (↑sqrt (↑sqrt (x * x)))))) ≤
+    ↑sqrt y
+x y : ℝ≥0
+h : x * x ≤ y
+⊢ ↑sqrt
+        (↑sqrt (↑sqrt (↑sqrt (x * x))) *
+          (↑sqrt (↑sqrt (↑sqrt (x * x) * ↑sqrt (x * x))) * ↑sqrt (↑sqrt (↑sqrt (x * x))))) *
+      ↑sqrt
+        (↑sqrt (↑sqrt (↑sqrt (x * x))) *
+          (↑sqrt (↑sqrt (↑sqrt (x * x) * ↑sqrt (x * x))) * ↑sqrt (↑sqrt (↑sqrt (x * x))))) ≤
+    ↑sqrt y
+x y : ℝ≥0
+h : x * x ≤ y
+⊢ ↑sqrt (↑sqrt (↑sqrt (↑sqrt x) * ↑sqrt (↑sqrt x))) *
+        ↑sqrt (↑sqrt (↑sqrt (↑sqrt x * ↑sqrt x * (↑sqrt x * ↑sqrt x))) * ↑sqrt (↑sqrt (↑sqrt x) * ↑sqrt (↑sqrt x))) *
+      (↑sqrt (↑sqrt (↑sqrt (↑sqrt x) * ↑sqrt (↑sqrt x))) *
+        ↑sqrt (↑sqrt (↑sqrt (↑sqrt x * ↑sqrt x * (↑sqrt x * ↑sqrt x))) * ↑sqrt (↑sqrt (↑sqrt x) * ↑sqrt (↑sqrt x)))) ≤
+    ↑sqrt y
+x y : ℝ≥0
+h : x * x ≤ y
+⊢ ↑sqrt (↑sqrt (↑sqrt x)) * ↑sqrt (↑sqrt (↑sqrt x * ↑sqrt x) * ↑sqrt (↑sqrt x)) * ↑sqrt (↑sqrt (↑sqrt x)) *
+      ↑sqrt (↑sqrt (↑sqrt x * ↑sqrt x) * ↑sqrt (↑sqrt x)) ≤
+    ↑sqrt y
+x y : ℝ≥0
+h : x * x ≤ y
+⊢ ↑sqrt (↑sqrt (↑sqrt x)) *
+      (↑sqrt (↑sqrt (↑sqrt x * ↑sqrt x) * ↑sqrt (↑sqrt x)) *
+        (↑sqrt (↑sqrt (↑sqrt x)) * ↑sqrt (↑sqrt (↑sqrt x * ↑sqrt x) * ↑sqrt (↑sqrt x)))) ≤
+    ↑sqrt y
+x y : ℝ≥0
+h : x * x ≤ y
+⊢ ↑sqrt (↑sqrt (↑sqrt x) * (↑sqrt (↑sqrt x * ↑sqrt x) * ↑sqrt (↑sqrt x))) *
+      ↑sqrt (↑sqrt (↑sqrt x) * (↑sqrt (↑sqrt x * ↑sqrt x) * ↑sqrt (↑sqrt x))) ≤
+    ↑sqrt y
+x y : ℝ≥0
+h : x * x ≤ y
+⊢ ↑sqrt (↑sqrt (↑sqrt x) * ↑sqrt (↑sqrt x * ↑sqrt x) * ↑sqrt (↑sqrt x)) *
+      ↑sqrt (↑sqrt (↑sqrt x) * ↑sqrt (↑sqrt x * ↑sqrt x) * ↑sqrt (↑sqrt x)) ≤
+    ↑sqrt y
+x y : ℝ≥0
+h : x * x ≤ y
+⊢ ↑sqrt
+      (↑sqrt (↑sqrt x) * (↑sqrt (↑sqrt x * ↑sqrt x) * ↑sqrt (↑sqrt x)) *
+        (↑sqrt (↑sqrt x) * (↑sqrt (↑sqrt x * ↑sqrt x) * ↑sqrt (↑sqrt x)))) ≤
+    ↑sqrt y
+x y : ℝ≥0
+h : x * x ≤ y
+⊢ (↑sqrt (↑sqrt (↑sqrt x)) * (↑sqrt (↑sqrt (↑sqrt x)) * ↑sqrt (↑sqrt (↑sqrt x)) * ↑sqrt (↑sqrt (↑sqrt x)))) ^ 2 ≤
+    ↑sqrt y
+x y : ℝ≥0
+⊢ ↑sqrt x ≤ ↑sqrt (↑sqrt y) ↔ x ^ 2 ≤ y
+x y : ℝ≥0
+⊢ x ≤ ↑sqrt (↑sqrt (y ^ 2)) ↔ x ^ 2 ≤ ↑sqrt (y ^ 2)
+x y : ℝ≥0
+⊢ ↑sqrt x ≤ ↑sqrt (↑sqrt y) ↔ x * x ≤ y
+x y : ℝ≥0
+⊢ ↑sqrt (x ^ 2) ≤ ↑sqrt y ↔ ↑sqrt (x ^ 2) ^ 2 ≤ y
+x y : ℝ≥0
+⊢ ↑sqrt (↑sqrt (x * x)) ≤ ↑sqrt (↑sqrt (↑sqrt (y * y))) ↔ ↑sqrt (x * x) * ↑sqrt (x * x) ≤ ↑sqrt (y * y)
+x y : ℝ≥0
+⊢ ↑sqrt (↑sqrt (x ^ 2)) ≤ ↑sqrt (↑sqrt y) ↔ x ^ 2 ≤ y
+x y : ℝ≥0
+⊢ ↑sqrt (x ^ 2) ≤ ↑sqrt y ↔ x ^ 2 ≤ y
+x y : ℝ≥0
+⊢ ↑sqrt (↑sqrt (x ^ 2)) ≤ ↑sqrt (↑sqrt y) ↔ ↑sqrt (x ^ 2) ^ 2 ≤ y
+x y : ℝ≥0
+⊢ x ^ 2 ≤ y ↔ ↑sqrt (x ^ 2) ^ 2 ≤ y
+x y : ℝ≥0
+⊢ ↑sqrt (x ^ 2) ≤ ↑sqrt (↑sqrt (y ^ 2)) ↔ ↑sqrt (x ^ 2) ^ 2 ≤ ↑sqrt (y ^ 2)
+x y : ℝ≥0
+⊢ ↑sqrt (x * x) ≤ ↑sqrt y ↔ ↑sqrt (x * x) ^ 2 ≤ y
+x y : ℝ≥0
+⊢ ↑sqrt x = 0 ↔ x ≤ 0
+x y : ℝ≥0
+⊢ ↑sqrt x = ↑sqrt (y * y) ↔ ↑sqrt (y * y) * ↑sqrt (y * y) = x ∧ 0 ≤ ↑sqrt (y * y) ∨ x < 0 ∧ ↑sqrt (y * y) = 0
+x y : ℝ≥0
+⊢ ↑(OrderIso.symm (powOrderIso 2 sqrt.proof_1)) x = y ↔ y * y = x ∧ 0 ≤ y ∨ x < 0 ∧ y = 0
+x y : ℝ≥0
+⊢ ↑sqrt (↑sqrt (x * x)) = ↑sqrt (y * y) ↔
+    ↑sqrt (y * y) * ↑sqrt (y * y) = ↑sqrt (x * x) ∧ 0 ≤ ↑sqrt (y * y) ∨ ↑sqrt (x * x) < 0 ∧ ↑sqrt (y * y) = 0
+x y : ℝ≥0
+⊢ ↑sqrt x = ↑sqrt (y * y) ↔ y * y = x ∧ 0 ≤ ↑sqrt (y * y) ∨ x < 0 ∧ ↑sqrt (y * y) = 0
+x y : ℝ≥0
+⊢ ↑sqrt x = y ↔ y * y = x
+x y : ℝ≥0
+⊢ ↑sqrt (↑sqrt (x * x)) = ↑sqrt (y * y) ↔
+    y * y = ↑sqrt (x * x) ∧ 0 ≤ ↑sqrt (y * y) ∨ ↑sqrt (x * x) < 0 ∧ ↑sqrt (y * y) = 0
+x y : ℝ≥0
+⊢ ↑sqrt (↑sqrt (↑sqrt (x * x * (x * x)))) = ↑sqrt (↑sqrt (y * y * (y * y))) ↔
+    ↑sqrt (y * y * (y * y)) = ↑sqrt (↑sqrt (x * x * (x * x))) ∧ 0 ≤ ↑sqrt (↑sqrt (y * y * (y * y))) ∨
+      ↑sqrt (↑sqrt (x * x * (x * x))) < 0 ∧ ↑sqrt (↑sqrt (y * y * (y * y))) = 0
+x y : ℝ≥0
+⊢ ↑(OrderIso.symm (powOrderIso 2 sqrt.proof_1)) (↑(OrderIso.symm (powOrderIso 2 sqrt.proof_1)) x) ≤
+      ↑(OrderIso.symm (powOrderIso 2 sqrt.proof_1)) y ↔
+    0 ≤ y ∧ x ≤ y ^ 2
+x y : ℝ≥0
+⊢ ↑sqrt (↑sqrt x) ≤ ↑sqrt y ↔ 0 ≤ y ∧ x ≤ y ^ 2
+x y : ℝ≥0
+⊢ ↑sqrt x ≤ ↑sqrt (y ^ 2) ↔ 0 ≤ ↑sqrt (y ^ 2) ∧ x ≤ ↑sqrt (y ^ 2) ^ 2
+x y : ℝ≥0
+⊢ ↑(OrderIso.symm (powOrderIso 2 sqrt.proof_1)) x ≤ y ↔ 0 ≤ y ∧ x ≤ y ^ 2
+x y : ℝ≥0
+⊢ ↑sqrt (↑sqrt x) ≤ ↑sqrt (↑sqrt (y ^ 2)) ↔ 0 ≤ ↑sqrt (y ^ 2) ∧ x ≤ y ^ 2
+x y : ℝ≥0
+⊢ ↑(OrderIso.symm
+            (StrictMono.orderIsoOfSurjective (fun x => x ^ 2)
+              (_ : ∀ (x y : ℝ≥0), x < y → (fun x => x ^ 2) ((fun a => ↑a) x) < (fun x => x ^ 2) ↑y)
+              (_ : Surjective fun b => id b ^ 2)))
+        (↑(OrderIso.symm
+              (StrictMono.orderIsoOfSurjective (fun x => x ^ 2)
+                (_ : ∀ (x y : ℝ≥0), x < y → (fun x => x ^ 2) ((fun a => ↑a) x) < (fun x => x ^ 2) ↑y)
+                (_ : Surjective fun b => id b ^ 2)))
+          x) ≤
+      ↑(OrderIso.symm
+            (StrictMono.orderIsoOfSurjective (fun x => x ^ 2)
+              (_ : ∀ (x y : ℝ≥0), x < y → (fun x => x ^ 2) ((fun a => ↑a) x) < (fun x => x ^ 2) ↑y)
+              (_ : Surjective fun b => id b ^ 2)))
+        y ↔
+    0 ≤ y ∧ x ≤ y ^ 2
+x y : ℝ≥0
+⊢ ↑sqrt (↑sqrt x) ≤ ↑sqrt (↑sqrt (y ^ 2)) ↔ 0 ≤ ↑sqrt (y ^ 2) ∧ x ≤ ↑sqrt (y ^ 2) ^ 2
+x y : ℝ≥0
+⊢ x ≤ y ^ 2 ↔ 0 ≤ ↑sqrt (y ^ 2) ∧ x ≤ ↑sqrt (y ^ 2) ^ 2
+x y : ℝ≥0
+⊢ ↑sqrt x ≤ y ↔ x ≤ y ^ 2
+x y : ℝ≥0
+⊢ ↑sqrt x ≤ ↑sqrt (y ^ 2) ↔ 0 ≤ ↑sqrt (y ^ 2) ∧ x ≤ y ^ 2
+x y : ℝ≥0
+⊢ x ≤ y ^ 2 ↔ x ≤ ↑sqrt (y ^ 2) ^ 2
+x y : ℝ≥0
+⊢ ↑sqrt (↑sqrt (↑sqrt x)) ≤ ↑sqrt (↑sqrt y) ↔ 0 ≤ y ∧ x ≤ y ^ 2
+x y : ℝ≥0
+⊢ x ≤ (↑sqrt y ^ 2) ^ 2 ↔ 0 ≤ y ∧ x ≤ y ^ 2
+x y : ℝ≥0
+⊢ ↑sqrt x ≤ y ↔ 0 ≤ y ∧ x ≤ y ^ 2
+x y : ℝ≥0
+⊢ ↑sqrt x ≤ ↑sqrt (y ^ 2) ↔ x ≤ ↑sqrt (y ^ 2) ^ 2
+x y : ℝ≥0
+⊢ x ≤ y ^ 2 ↔ x ≤ y * y
+x y : ℝ≥0
+⊢ ↑sqrt (↑sqrt (x ^ 2)) ≤ y ↔ ↑sqrt (x ^ 2) ≤ y ^ 2
+x y : ℝ≥0
+⊢ ↑sqrt x ≤ y ↔ x ≤ y * y
+x y : ℝ≥0
+⊢ ↑sqrt (↑sqrt x) ≤ ↑sqrt (↑sqrt (y ^ 2)) ↔ x ≤ y ^ 2
+x y : ℝ≥0
+⊢ ↑sqrt (↑sqrt x) ≤ ↑sqrt (↑sqrt (y ^ 2)) ↔ x ≤ ↑sqrt (y ^ 2) ^ 2
+x y : ℝ≥0
+⊢ ↑sqrt (↑sqrt x) ≤ ↑sqrt y ↔ x ≤ y ^ 2

@@ -1,0 +1,10 @@
+import Lean4Repl
+import Mathlib
+
+open Real Nat Topology
+open scoped BigOperators
+
+set_option maxHeartbeats 999999999999999999999999
+
+theorem amc12a_2021_p14 :
+  (∑ k in (Finset.Icc 1 20), (Real.logb (5^k) (3^(k^2)))) * (∑ k in (Finset.Icc 1 100), (Real.logb (9^k) (25^k))) = 21000 := by lean_repl sorry

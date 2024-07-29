@@ -1,0 +1,1 @@
+{"version":1,"references":{"c:mul_two_pow_add_eq_mul_pow":{"usages":[],"definition":[1,8,1,34]},"c:Nat.add_mul":{"usages":[[2,7,2,18]],"definition":null}},"module":"AdaLean.mul_two_pow_add_eq_mul_pow"}

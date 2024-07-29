@@ -1,0 +1,1 @@
+{"version":1,"references":{"c:Real":{"usages":[[8,53,8,54]],"definition":null},"c:Nat.choose":{"usages":[[8,79,8,89]],"definition":null},"c:Ico_pow_choose":{"usages":[],"definition":[8,8,8,22]},"c:Finset.range":{"usages":[[8,111,8,116]],"definition":null},"c:Finset.Ico":{"usages":[[8,32,8,35]],"definition":null}},"module":"Theorem.example_separate.Ico_pow_choose"}
